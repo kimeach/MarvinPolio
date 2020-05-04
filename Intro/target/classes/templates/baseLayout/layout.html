@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:include="layout/headerSetting::head">
+</head>
+
+<body class="container-fluid">
+	<div th:include="layout/sidebar::sidebar"></div> <!-- sidebar layout -->
+	<div th:include="layout/topMenu::topMenu"></div> <!-- topMenu layout -->
+	<div th:include="layout/body::body"></div> <!-- body layout -->
+	<div th:include="layout/bottom::bottom"></div> <!-- bottom layout -->
+	
+</body>
+</html>

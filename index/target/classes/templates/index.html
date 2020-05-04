@@ -1,10 +1,62 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Insert title here</title>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:include="layout/headerSetting::head">
 </head>
-<body>
-<h1>test입니다.</h1>
-</body>
+
+<body class="container-fluid">
+	<div th:include="layout/sidebar::sidebar" id="sidebar"></div> <!-- sidebar layout -->
+	<div th:include="main::Main" id="Main">
+
+	</div> <!-- body layout -->
+	<div th:include="layout/body::body" id="Profile"></div> <!-- body layout -->
+	<div th:include="layout/body::body" id="MyPhotoPolio"></div> <!-- body layout -->
+	<div th:include="layout/body::body" id="Comment"></div> <!-- body layout -->
+	
+	
+	<div th:include="layout/bottom::bottom" id="bottom"></div> <!-- bottom layout -->
+
+	<th:block layout:fragment="css">
+		<style type="text/css">
+
+		</style>
+	</th:block>
+	<th:block layout:fragment="script">
+	 <th:block th:include="layout/headerSetting::script"></th:block>
+		<script type="text/javascript" th:inline="javascript">
+			$(function(){
+				
+				$('#sidebar').click(function(){
+					$('#TitleMenu').html('Marvin')
+					$('.iconName').css("display","block");
+					if(parseInt($('#sidebar').css("width")) === 45){
+						$('#sidebar').animate({
+							width : '7%'
+							},
+							500,
+							function() {
+								
+								// Animation complete. 
+							});
+					}else{
+						$('.iconName').css("display","none");
+						$('#sidebar').animate({
+							width : '3%'
+							},
+							500,
+							function() {
+								$('#TitleMenu').html('M')
+								
+								// Animation complete. 
+							});
+					}
+					
+
+				})
+			});	
+		</script>
+	</th:block>
+	</body>
 </html>

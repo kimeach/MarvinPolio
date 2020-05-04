@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+</head>
+<div th:fragment="sidebar">
+
+	<div id="TitleMenu">
+	Marvin
+	</div>
+	
+	<div class="subMenu">
+		<div id="subMenu_Profile" class="subMenu_class">
+			<i class="fa fa-user fa-lg"></i> 
+			<p class="iconName">Profile</p>
+		</div>
+		<div id="subMenu_MyPhotoPolio" class="subMenu_class">
+			<i class="fa fa-list-alt fa-lg" aria-hidden="true"></i>
+			<p class="iconName">My PortPolio</p>
+		</div>
+		<div id="subMenu_Comment" class="subMenu_class">
+			<i class="fa fa-comment fa-lg" aria-hidden="true"></i>
+			<p class="iconName">Comment</p>
+		</div>
+		
+		<div id="subMenu_Comment" class="subMenu_class">
+			<i class="fa fa-history fa-lg" aria-hidden="true"></i>
+			<p class="iconName">History</p>
+		</div>
+		<div id="searchBtn-cover" class="subMenu_class">
+			<i class="fa fa-search fa-lg" id="searchBtn"></i>
+			<p class="iconName">Search</p>
+		</div>
+	</div>
+	
+			<th:block layout:fragment="css">
+			<style>
+				#TitleMenu{
+					height : 55%;
+					width:100%;
+					color : rgba(255,60,70,1);
+					font-size: 2em;
+					font-family: 'Girassol', cursive;
+					
+				}
+				.iconName{
+				margin-top : 0;
+				}
+				
+				.subMenu{
+				height : 60%;
+				}
+				#searchBtn-cover{
+				
+				}
+				
+				#searchBtn{
+				}
+				
+				.subMenu_class{
+				color : rgba(255,60,70,1);
+				height : 15%;
+				text-align: center;
+				}
+				
+				#subMenu_Profile{
+				}
+				
+				#subMenu_MyPhotoPolio{
+				}
+				
+				#subMenu_Comment{
+				}
+			</style>
+		</th:block>
+			<th:block layout:fragment="script">
+	 <th:block th:include="layout/headerSetting::script"></th:block>
+		<script type="text/javascript" th:inline="javascript">
+			$(function(){
+				
+			});	
+		</script>
+	</th:block>
+		
+</div>
+</html>

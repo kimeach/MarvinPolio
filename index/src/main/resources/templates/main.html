@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:include="layout/headerSetting::head">
+</head>
+
+<div th:fragment="Main">
+
+		<div id="Mainslide">
+			abc
+		</div>
+		<div id="ContentCover">
+			<div id="mainContent">
+				PortPolio MainContent Introduce
+				</br> Title Name
+			</div>
+			<div id="SubContent">
+				PortPolio SubContent Introduce PortPolio SubContent Introduce
+				</br>PortPolio SubContent Introduce PortPolio
+				</br>PortPolio SubContent Introduce
+			</div>
+				<button id="learnMoreBtn">learn more &nbsp;→</button>
+				<div>
+				
+				</div>
+		</div>
+
+	<th:block layout:fragment="css">
+		<style type="text/css">
+			#ContentCover{
+				margin: 7% 0 0 50%;
+			    width: 50%;
+			    height: 86%;
+			    color : #ddd;
+			     /* background-color: rgba(85,0,0,0.5);  */
+			}
+			
+			#Mainslide{
+			width : 50%;
+			height:100%;
+			background-image: url( "./img/back3-1.jpg");
+			background-position: center;
+			background-size: 100% 100% ; 
+			float : left;
+			}
+			#mainContent{
+				font-size: 3em;
+				width : 100%;
+				height:20%;
+			}
+			#SubContent{
+				font-size: 1.5em;
+			}
+			#learnMoreBtn{
+				color: rgba(255,60,70,1);
+				background-color: rgba(25,32,40,1);
+				border-color: rgba(25,32,40,1);
+				font-size : 1.5em;
+				width : 35%;
+				height: 8%;
+				margin: 10% 0 0 0;
+			}
+			
+			#mainWrite{
+			font-size: 2em;
+			color : rgba(255,60,70,1);
+			height : 25%;
+			margin-top : 10%;
+			
+			}
+			#mainSearchId{
+			background-color: black;
+		    outline: none;
+		    border : 0px;
+			color: rgba(255,60,70,1);
+			font-size : 2em;
+			width : 90%;
+			height:97%;
+			border-radius: 6px;
+			}
+			#RecentSearch{
+				color: rgba(255,60,70,1);
+				
+			}
+			input::placeholder {
+				font-family: 'Girassol', cursive;
+				color: rgba(255,60,70,1);
+			}
+			
+
+			
+
+		</style>
+	</th:block>
+	<th:block layout:fragment="script">
+	 <th:block th:include="layout/headerSetting::script"></th:block>
+		<script type="text/javascript" th:inline="javascript">
+			$(function(){
+				
+			});	
+		</script>
+	</th:block>
+	</div>
+</html>

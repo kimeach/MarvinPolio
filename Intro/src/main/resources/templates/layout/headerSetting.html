@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+
+<head th:fragment="head">
+<meta charset="utf-8">
+<title>PortPolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link th:href="@{/css/marvin.1.0.css?version=2}"  rel="stylesheet" type="text/css">
+	<link th:href="@{https://fonts.googleapis.com/css2?family=Girassol&display=swap}" rel="stylesheet">
+	<script th:src="@{https://kit.fontawesome.com/cf197adbe2.js}" crossorigin="anonymous"></script>
+</head>
+
+<th:block layout:fragment="script">
+	<th:block th:fragment="script">
+		
+		<script th:src="@{//unpkg.com/jquery@3/dist/jquery.min.js}"></script>
+		<script th:src="@{//unpkg.com/bootstrap@4/dist/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/Marvin.1.0.0.js?version=1}"  type="text/javascript"></script>
+	
+	</th:block>
+</th:block>	
+</html>
