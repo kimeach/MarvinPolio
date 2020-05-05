@@ -5,25 +5,19 @@
 
 <head th:include="layout/headerSetting::head">
 </head>
-
-<body class="container-fluid">
-	<div th:include="layout/searchPopup::search" id="search"></div> <!-- body layout -->
-	<div th:include="layout/sidebar::sidebar" id="sidebar"></div> <!-- sidebar layout -->
-	
-	<div id="MainslideCover"> </div>
-	
+	<div th:fragment="Slide">
+		<div id="Mainslide1" class="Mainslide" data-slide="1" data-slideShow="start">
+		</div>
+		<div id="Mainslide2" class="Mainslide" data-slide="2" data-slideShow="next">
+		</div>
+		<div id="Mainslide3" class="Mainslide" data-slide="3">
+		</div>
 	<th:block layout:fragment="css">
-		<style type="text/css">
-
-	</style>
+		<link th:href="@{/css/slide.css}"  rel="stylesheet" type="text/css">
 	</th:block>
 	<th:block layout:fragment="script">
 	 <th:block th:include="layout/headerSetting::script"></th:block>
-		<script type="text/javascript" th:inline="javascript">
-			$(function(){
-			
-			});	
-		</script>
+		
 	</th:block>
-	</body>
+	</div>
 </html>

@@ -7,10 +7,24 @@
 </head>
 
 <body class="container-fluid">
-	<div th:include="layout/sidebar::sidebar"></div> <!-- sidebar layout -->
-	<div th:include="layout/topMenu::topMenu"></div> <!-- topMenu layout -->
-	<div th:include="layout/body::body"></div> <!-- body layout -->
-	<div th:include="layout/bottom::bottom"></div> <!-- bottom layout -->
+	<div th:include="layout/searchPopup::search" id="search"></div> <!-- body layout -->
+	<div th:include="layout/sidebar::sidebar" id="sidebar"></div> <!-- sidebar layout -->
 	
-</body>
+	<div id="MainslideCover"> </div>
+	
+	<div th:include="layout/bottom::bottom" id="bottom"></div> <!-- bottom layout -->
+	<th:block layout:fragment="css">
+		<style type="text/css">
+
+	</style>
+	</th:block>
+	<th:block layout:fragment="script">
+	 <th:block th:include="layout/headerSetting::script"></th:block>
+		<script type="text/javascript" th:inline="javascript">
+			$(function(){
+			
+			});	
+		</script>
+	</th:block>
+	</body>
 </html>

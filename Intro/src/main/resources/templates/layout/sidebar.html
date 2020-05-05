@@ -5,41 +5,66 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 </head>
 <div th:fragment="sidebar">
-	<div id="TitleMenu">Marvin</div>
-	<div class="subMenu">
-		<div id="subMenu_profile" class="subMenu_class">
-			<i class="fa fa-user fa-lg"></i> 
-			<p class="iconName">Profile</p>
+	<div id="sidebarCover">
+		<div id="TitleMenuCover">
+			
 		</div>
-		<div id="subMenu_myPhotoPolio" class="subMenu_class">
-			<i class="fa fa-list-alt fa-lg" aria-hidden="true"></i>
-			<p class="iconName">My PortPolio</p>
-		</div>
-		<div id="subMenu_comment" class="subMenu_class">
-			<i class="fa fa-comment fa-lg" aria-hidden="true"></i>
-			<p class="iconName">Comment</p>
-		</div>
-		
-		<div id="subMenu_histroy" class="subMenu_class">
-			<i class="fa fa-history fa-lg" aria-hidden="true"></i>
-			<p class="iconName">History</p>
-		</div>
-		<div id="searchBtn-search" class="subMenu_class">
-			<i class="fa fa-search fa-lg" id="searchBtn"></i>
-			<p class="iconName">Search</p>
+		<div class="subMenu">
+			<div id="subMenu_profile" class="subMenu_class">
+				<i class="fa fa-user fa-lg"></i> 
+				<p class="iconName">Profile</p>
+			</div>
+			<div id="subMenu_myPhotoPolio" class="subMenu_class">
+				<i class="fa fa-list-alt fa-lg" aria-hidden="true"></i>
+				<p class="iconName">My PortPolio</p>
+			</div>
+			<div id="subMenu_comment" class="subMenu_class">
+				<i class="fa fa-comment fa-lg" aria-hidden="true"></i>
+				<p class="iconName">Comment</p>
+			</div>
+			
+			<div id="subMenu_histroy" class="subMenu_class">
+				<i class="fa fa-history fa-lg" aria-hidden="true"></i>
+				<p class="iconName">History</p>
+			</div>
+			<div id="searchBtn-search" class="subMenu_class">
+				<i class="fa fa-search fa-lg" id="searchBtn"></i>
+				<p class="iconName">Search</p>
+			</div>
 		</div>
 	</div>
-	
+	<div id="sidebarBtnCover">
+		<div id="sidebarBtn">
+			<i class="fa fa-angle-double-left fa-lg" aria-hidden="true"></i>
+		</div>	
+	</div>	
 			<th:block layout:fragment="css">
 			<style>
-			
-				#TitleMenu{
+			#sidebarCover{
+				width: 70%;
+				height : 100%;
+				float: left;
+			}
+			#sidebarBtnCover{
+				width: 30%;
+				height : 100%;
+				float: left;
+				background-color: rgba(25,32,40,0.8);
+				display: table;
+				cursor: pointer;
+			}
+			#sidebarBtn{
+				color : rgba(255,60,70,1);
+				display: table-cell;
+    			vertical-align: middle;
+			}
+				#TitleMenuCover{
 					height : 55%;
 					width:100%;
 					color : rgba(255,60,70,1);
 					font-size: 2em;
 					font-family: 'Girassol', cursive;
-					cursor: pointer;
+			
 				}
 				.iconName{
 				margin-top : 0;
@@ -59,6 +84,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 				height : 15%;
 				text-align: center;
 				cursor: pointer;
+				font-family: 'Kaushan Script', cursive;
 				}
 				
 				#subMenu_profile{
@@ -75,6 +101,10 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	 <th:block th:include="layout/headerSetting::script"></th:block>
 		<script type="text/javascript" th:inline="javascript">
 			$(function(){
+				$("#TitleMenu").click(function(){
+					location.href ="index";
+				})
+				
 				$("#subMenu_profile").click(function(){
 					location.href ="profile";
 				})
@@ -98,7 +128,6 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 				$("#searchBtn-search").click(function(){
 					$("#search").slideToggle("slow");
 				})
-				
 				
 			});	
 		</script>

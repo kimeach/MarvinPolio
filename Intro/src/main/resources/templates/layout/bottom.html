@@ -8,23 +8,17 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<div id="bottom-cover">
 		<table class="table" id="bottom-table">
 			<colgroup>
-			<col width="15%"/>
-			<col width="5%"/>
-			<col width="30%"/>
-			<col width="15%"/>
-			<col width="5%"/>
-			<col width="30%"/>
-			
-			
+				<col width="15%"/>
+				<col width="5%"/>
+				<col width="30%"/>
+				<col width="15%"/>
+				<col width="5%"/>
+				<col width="30%"/>
 			</colgroup>
 			<tr>
-			</tr>
-			
-			<tr>
-				<td>Company</td>
-				<td> : </td>
-				<td>Marvin</td>
-				
+				<td>Company</td> 
+				<td> : </td> 
+				<td>Marvin</td> 
 				<td>CEO</td>
 				<td> : </td>
 				<td>Kim Ki Moon</td>
@@ -39,7 +33,26 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 				<td>kimeach@naver.com</td>
 			</tr>
 		</table>
+		<table class="table" id="visitors">
+			<colgroup>
+				<col width="15%"/>
+				<col width="5%"/>
+				<col width="30%"/>
+				<col width="15%"/>
+				<col width="5%"/>
+				<col width="30%"/>
+			</colgroup>
+			<tr>
+				<td>Total</td> 
+				<td> : </td> 
+				<td>100</td> 
+				<td>Visitor</td>
+				<td> : </td>
+				<td>200</td>
+			</tr>
+		</table>
 	</div>
+
 	<th:block layout:fragment="css">
 		<style type="text/css">
 		#bottom-cover{
@@ -47,6 +60,11 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 		#bottom-table{
 			width: 40%;
 			margin:0 0 0 30%;
+			display: inline-block;
+		}
+		#visitors{
+		float : right;
+		margin-top: 2%;
 		}
 		</style>
 	</th:block>

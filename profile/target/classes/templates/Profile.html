@@ -6,20 +6,25 @@
 <head th:include="layout/headerSetting::head">
 </head>
 
-<div th:fragment="Profile">
+<body class="container-fluid">
+	<div th:include="layout/searchPopup::search" id="search"></div> <!-- body layout -->
+	<div th:include="layout/sidebar::sidebar" id="sidebar"></div> <!-- sidebar layout -->
+	
+	<div id="MainslideCover"> </div>
+	
+	<div th:include="layout/bottom::bottom" id="bottom"></div> <!-- bottom layout -->
 	<th:block layout:fragment="css">
 		<style type="text/css">
-		
-		</style>
+
+	</style>
 	</th:block>
 	<th:block layout:fragment="script">
 	 <th:block th:include="layout/headerSetting::script"></th:block>
 		<script type="text/javascript" th:inline="javascript">
 			$(function(){
-				alert('profile')
+			
 			});	
 		</script>
 	</th:block>
-	
-	</div>
+	</body>
 </html>

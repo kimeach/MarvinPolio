@@ -5,8 +5,38 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<head>
 	</head>
 	<div th:fragment="topMenu">
+	<div id="TitleMenu">Marvin</div>
+	<div id="faBtnCover">
+		<i class="fa fa-bell fa-lg" aria-hidden="true"></i>
+		<i class="fa fa-sign-in fa-lg" aria-hidden="true"></i>
+	</div>
 
 
+		<th:block layout:fragment="css">
+			<style>
+				#TitleMenu{
+					width : 5%;
+					cursor: pointer;
+					color : rgba(255,60,70,1);
+					font-size: 2em;
+					font-family: 'Girassol', cursive;
+					margin-left: 0.5%;
+					display: inline-block;
+				}
+				#faBtnCover{
+					display: inline-block;
+				    width: 5%;
+    				margin: 0 0 0 88%;
+				}
+			.fa-bell{
+			color : rgba(255,60,70,1);
+			width : 48%;
+			}
+			.fa-sign-in{
+			color : rgba(255,60,70,1);
+			}
+			</style>
+		</th:block>
 		<th:block layout:fragment="script">
 			<th:block th:fragment="script">
 		
