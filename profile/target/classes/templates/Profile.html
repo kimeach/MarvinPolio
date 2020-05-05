@@ -6,7 +6,7 @@
 <head th:include="layout/headerSetting::head">
 </head>
 
-<div th:fragment="MyPhotoPolio"></div>
+<div th:fragment="Profile">
 	<th:block layout:fragment="css">
 		<style type="text/css">
 		
@@ -16,8 +16,10 @@
 	 <th:block th:include="layout/headerSetting::script"></th:block>
 		<script type="text/javascript" th:inline="javascript">
 			$(function(){
-				
+				alert('profile')
 			});	
 		</script>
 	</th:block>
+	
+	</div>
 </html>

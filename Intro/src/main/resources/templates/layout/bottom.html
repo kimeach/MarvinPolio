@@ -2,9 +2,54 @@
 <html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
 xmlns:th="http://www.thymeleaf.org"
 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
+<head >
 </head>
 <div th:fragment="bottom">
+	<div id="bottom-cover">
+		<table class="table" id="bottom-table">
+			<colgroup>
+			<col width="15%"/>
+			<col width="5%"/>
+			<col width="30%"/>
+			<col width="15%"/>
+			<col width="5%"/>
+			<col width="30%"/>
+			
+			
+			</colgroup>
+			<tr>
+			</tr>
+			
+			<tr>
+				<td>Company</td>
+				<td> : </td>
+				<td>Marvin</td>
+				
+				<td>CEO</td>
+				<td> : </td>
+				<td>Kim Ki Moon</td>
+			</tr>
+			<tr>
+				<td>Phone</td>
+				<td> : </td>
+				<td>010-7657-5746</td>
+				
+				<td>Email</td>
+				<td> : </td>
+				<td>kimeach@naver.com</td>
+			</tr>
+		</table>
+	</div>
+	<th:block layout:fragment="css">
+		<style type="text/css">
+		#bottom-cover{
+		}
+		#bottom-table{
+			width: 40%;
+			margin:0 0 0 30%;
+		}
+		</style>
+	</th:block>
 </div>
 
 </html>

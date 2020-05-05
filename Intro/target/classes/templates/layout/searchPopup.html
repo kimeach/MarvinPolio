@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<div th:fragment="search">
+		<i class="fa fa-times fa-lg"> </i>
+		
+		<input type="text" id="search_input" placeholder="search input..">
+		
+		
+		
+		
+		
+		
+		<th:block layout:fragment="css">
+			<style type="text/css">
+				#search_input{
+					margin: 5% 0 0 25%;
+					width : 50%;
+					height : 2em;
+					background-color:  rgba(25,32,40,0);
+					border: none;
+					border-bottom : 2px solid rgba(255,60,70,1);
+					outline: 0px;
+					font-size: 2em;
+					color : #ddd;
+				}
+				
+				.fa-times{
+					color :  rgba(255,60,70,1);
+					float : right;
+					margin : 1% 1% 0 0;
+					cursor: pointer;
+				}
+			</style>
+		</th:block>
+		<th:block layout:fragment="script">
+			<th:block th:fragment="script">
+				<script>
+
+				</script>
+			</th:block>
+		</th:block>
+	</div>
+</html>

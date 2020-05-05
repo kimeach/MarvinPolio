@@ -5,30 +5,26 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 </head>
 <div th:fragment="sidebar">
-
-	<div id="TitleMenu">
-	Marvin
-	</div>
-	
+	<div id="TitleMenu">Marvin</div>
 	<div class="subMenu">
-		<div id="subMenu_Profile" class="subMenu_class">
+		<div id="subMenu_profile" class="subMenu_class">
 			<i class="fa fa-user fa-lg"></i> 
 			<p class="iconName">Profile</p>
 		</div>
-		<div id="subMenu_MyPhotoPolio" class="subMenu_class">
+		<div id="subMenu_myPhotoPolio" class="subMenu_class">
 			<i class="fa fa-list-alt fa-lg" aria-hidden="true"></i>
 			<p class="iconName">My PortPolio</p>
 		</div>
-		<div id="subMenu_Comment" class="subMenu_class">
+		<div id="subMenu_comment" class="subMenu_class">
 			<i class="fa fa-comment fa-lg" aria-hidden="true"></i>
 			<p class="iconName">Comment</p>
 		</div>
 		
-		<div id="subMenu_Comment" class="subMenu_class">
+		<div id="subMenu_histroy" class="subMenu_class">
 			<i class="fa fa-history fa-lg" aria-hidden="true"></i>
 			<p class="iconName">History</p>
 		</div>
-		<div id="searchBtn-cover" class="subMenu_class">
+		<div id="searchBtn-search" class="subMenu_class">
 			<i class="fa fa-search fa-lg" id="searchBtn"></i>
 			<p class="iconName">Search</p>
 		</div>
@@ -36,13 +32,14 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	
 			<th:block layout:fragment="css">
 			<style>
+			
 				#TitleMenu{
 					height : 55%;
 					width:100%;
 					color : rgba(255,60,70,1);
 					font-size: 2em;
 					font-family: 'Girassol', cursive;
-					
+					cursor: pointer;
 				}
 				.iconName{
 				margin-top : 0;
@@ -57,20 +54,20 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 				
 				#searchBtn{
 				}
-				
 				.subMenu_class{
 				color : rgba(255,60,70,1);
 				height : 15%;
 				text-align: center;
+				cursor: pointer;
 				}
 				
-				#subMenu_Profile{
+				#subMenu_profile{
 				}
 				
-				#subMenu_MyPhotoPolio{
+				#subMenu_myPhotoPolio{
 				}
 				
-				#subMenu_Comment{
+				#subMenu_comment{
 				}
 			</style>
 		</th:block>
@@ -78,6 +75,30 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	 <th:block th:include="layout/headerSetting::script"></th:block>
 		<script type="text/javascript" th:inline="javascript">
 			$(function(){
+				$("#subMenu_profile").click(function(){
+					location.href ="profile";
+				})
+				
+				$("#subMenu_myPhotoPolio").click(function(){
+					location.href ="myPortPolio";
+				})
+				
+				$("#subMenu_comment").click(function(){
+					location.href ="comment";
+				})
+				
+				$("#subMenu_histroy").click(function(){
+					location.href ="history";
+				})
+				
+				$('.fa-times').click(function(){
+					$('#search').slideUp("slow");
+				})
+				
+				$("#searchBtn-search").click(function(){
+					$("#search").slideToggle("slow");
+				})
+				
 				
 			});	
 		</script>

@@ -100,5 +100,10 @@
 		<module>intro</module>
 		<module>setting</module>
 		<module>index</module>
+		<module>profile</module>
+		<module>myPortpolio</module>
+		<module>comment</module>
+		<module>search</module>
+		<module>history</module>
 	</modules>
 </project>

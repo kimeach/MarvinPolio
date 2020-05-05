@@ -6,7 +6,6 @@
     <version>1.0.0</version>
   </parent>
   <artifactId>index</artifactId>
-  
      <packaging>jar</packaging>
        	<dependencies>
       	<dependency>
@@ -15,5 +14,4 @@
         	<version>1.0.0</version>
 		</dependency>
 	</dependencies>
-  
 </project>

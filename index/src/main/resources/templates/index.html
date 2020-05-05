@@ -7,19 +7,91 @@
 </head>
 
 <body class="container-fluid">
+	<div th:include="layout/searchPopup::search" id="search"></div> <!-- body layout -->
 	<div th:include="layout/sidebar::sidebar" id="sidebar"></div> <!-- sidebar layout -->
+	<div id="MainslideCover"> </div>
+	
 	<div th:include="main::Main" id="Main">
 
 	</div> <!-- body layout -->
-	<div th:include="layout/body::body" id="Profile"></div> <!-- body layout -->
-	<div th:include="layout/body::body" id="MyPhotoPolio"></div> <!-- body layout -->
-	<div th:include="layout/body::body" id="Comment"></div> <!-- body layout -->
+<!-- 	<div th:include="layout/body::body" id="Profile"></div> body layout
+	<div th:include="layout/body::body" id="MyPhotoPolio"></div> body layout
+	<div th:include="layout/body::body" id="Comment"></div> body layout -->
 	
-	
+				<div id="slideShow-Cover">
+					<div id="slideShow_left" class="slideShow_item"> 
+						<i class="fas fa-chevron-left fa-lg"></i> 
+					</div>
+					<div id="slideShow_item1" class="slideShow_item"> 
+						<i class="far fa-circle"></i> 
+					</div>
+					<div id="slideShow_item3" class="slideShow_item"> 
+						<i class="fa fa-circle"></i>
+					</div>
+					<div id="slideShow_item4" class="slideShow_item">
+						<i class="fa fa-circle"></i>
+					</div>
+					<div id="slideShow_item5" class="slideShow_item">
+						<i class="fa fa-circle"></i>
+					</div>
+					<div id="slideShow_item5" class="slideShow_item">
+						<i class="fa fa-circle"></i>
+					</div>
+					<div id="slideShow_right" class="slideShow_item"> 
+						<i class="fas fa-chevron-right fa-lg"></i> 
+					</div>
+				</div>
 	<div th:include="layout/bottom::bottom" id="bottom"></div> <!-- bottom layout -->
 
 	<th:block layout:fragment="css">
 		<style type="text/css">
+			#MainslideCover {
+			    height: 13.9%;
+			    position: absolute;
+			    border-right: 96em solid rgba(25,32,40,0.5);
+			    border-bottom: 140px solid transparent;
+			    z-index : 99;
+			}
+			#slideShow-Cover{
+				width : 100%;
+				height : 13%;
+				position: absolute;
+				bottom: 8%;
+				color : #ddd;
+				text-align: center;
+			}
+			.slideShow_item{
+				width : 3%;
+				display: inline-block;
+				margin : 2% 0 0 0;
+				cursor: pointer;
+			}
+			
+@media (min-width: 1600px) and (max-width: 1720px) {
+	#MainslideCover {
+	    border-right: 844px solid rgba(25,32,40,0.5);
+	}
+
+ }			
+@media (min-width: 1850px) and (max-width: 1920px) {
+	#MainslideCover {
+	    border-right: 120em solid rgba(25,32,40,0.5);
+	}
+
+ }	
+ 
+ @media (min-width: 2100px) and (max-width: 2150px) {
+	#MainslideCover {
+	    border-right: 133em solid rgba(25,32,40,0.5);
+	}
+
+ }		
+
+ @media (min-width: 300px) and (max-width: 500px) {
+	body{
+	background-color: red;
+	}
+ }
 
 		</style>
 	</th:block>
@@ -28,33 +100,96 @@
 		<script type="text/javascript" th:inline="javascript">
 			$(function(){
 				
-				$('#sidebar').click(function(){
+				$('#TitleMenu').click(function(e){
+					et = e.target;
+					console.log("et : "+et.className);
+					console.log("etId : "+et.id);
+					
 					$('#TitleMenu').html('Marvin')
 					$('.iconName').css("display","block");
-					if(parseInt($('#sidebar').css("width")) === 45){
+					if(parseInt($('#sidebar').css("width")) >= 44 && parseInt($('#sidebar').css("width")) <= 62){
 						$('#sidebar').animate({
 							width : '7%'
-							},
-							500,
-							function() {
-								
-								// Animation complete. 
-							});
+						},
+						500,
+						function() {
+						});
 					}else{
 						$('.iconName').css("display","none");
 						$('#sidebar').animate({
 							width : '3%'
-							},
-							500,
-							function() {
-								$('#TitleMenu').html('M')
-								
-								// Animation complete. 
-							});
+						},
+						500,
+						function() {
+							$('#TitleMenu').html('M')
+						});
 					}
-					
-
 				})
+				//추후 자동 슬라이드 할때 사용
+				/* setInterval(function(){
+				
+				}, 1000);
+				 */
+				 
+				 
+					// 슬라이드 < 눌렀을 때 실행
+					$("#slideShow_left").click(function(){
+						for(var i=1;i<=$("#Main").find('.Mainslide').length;i++){
+							if($('#Main').find("#Mainslide"+i).attr("data-slideShow") === "start"){
+								var vals = parseInt(i);
+								$('#Mainslide'+vals).animate({ // start인거
+									 width : "0%",
+									 left : "100%"
+								},"slow")
+								$('#Mainslide'+(vals-1)).css("display","block");
+								//prev
+								$('#Mainslide'+(vals-1)).animate({
+									width : "100%",
+									left : "0%"
+								},"slow",
+								function(){
+									$('#Main').find("#Mainslide"+vals).attr("data-slideShow","next");
+									$('#Main').find("#Mainslide"+vals).css("display","none");
+									$('#Main').find("#Mainslide"+(vals-1)).attr("data-slideShow","start");
+									$('#Main').find("#Mainslide"+(vals+1)).attr("data-slideShow","next");
+								})
+							}
+						}
+					})
+					
+					
+				 // 슬라이드 > 눌렀을 때 실행
+				$("#slideShow_right").click(function(){ 
+					for(var i=1;i<=$("#Main").find('.Mainslide').length;i++){
+						if(parseInt($('#Main').find("#Mainslide"+i).attr("data-slide")) === 0){
+							alert("0이다")
+						}
+						if($('#Main').find("#Mainslide"+i).attr("data-slideShow") === "start"){
+							var vals = parseInt(i);
+							$('#Mainslide'+vals).animate({ // start인거
+								 width : "0%"
+							},"slow")
+							$('#Mainslide'+(vals+1)).css("display","block");
+							
+							//next
+							$('#Mainslide'+(vals+1)).animate({
+								width : "100%",
+								left : "0"
+							},"slow",
+							function(){
+								$('#Main').find("#Mainslide"+vals).attr("data-slideShow","prev");
+								$('#Main').find("#Mainslide"+vals).css("display","none");
+								$('#Main').find("#Mainslide"+(vals+1)).attr("data-slideShow","start");
+								$('#Main').find("#Mainslide"+(vals+2)).attr("data-slideShow","next");
+							})
+						}
+					}
+				})
+				
+
+			 	
+				
+				
 			});	
 		</script>
 	</th:block>
