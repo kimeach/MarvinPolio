@@ -7,15 +7,91 @@
 </head>
 
 <body class="container-fluid">
-	<div th:include="layout/searchPopup::search" id="search"></div> <!-- body layout -->
+	<div th:include="layout/searchPopup::search" id="search" class="commonBgColor"></div> <!-- body layout -->
+	<div th:include="layout/topMenu::topMenu" id="topMenu" class="commonBgColor"></div> <!-- sidebar layout -->
 	<div th:include="layout/sidebar::sidebar" id="sidebar"></div> <!-- sidebar layout -->
-	
-	<div id="MainslideCover"> </div>
-	
-	<div th:include="layout/bottom::bottom" id="bottom"></div> <!-- bottom layout -->
+		<div id="MainslideCover"> </div>
+	<div id="profileCover">
+		<div id="contentCover">
+			<div id="profileMainCover">
+				<div id="pictureCover">
+					<div id="profilePicture"></div>
+					<div id="profile_name">
+							Kim Ki Moon
+						</div>
+				</div>
+				
+				
+				
+ 				<div id="profileIntroCover">
+					<div id="profileIntro">
+						
+						
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
 	<th:block layout:fragment="css">
 		<style type="text/css">
-
+		#profileCover{
+			width : 100%;
+			height : 100%;
+			background-color: white;
+			display: inline-block;
+			background-image: url( "./img/whiteBack5.jpg");
+				background-position: center;
+			background-size: 100% 100% ;
+			
+		}
+		#profileMainCover{
+		width : 100%;
+		height : 40%;
+		box-shadow: 5px 5px 20px grey;
+		}
+		#pictureCover{
+			width : 20%;
+			height : 100%;
+			float: left;
+			 box-shadow: 5px 5px 20px grey;
+		}
+		#profilePicture{
+			width: 80%;
+		    height: 80%;
+		    border-radius: 50%;
+		    background-image: url(./img/Profile_Image.jpg);
+		    background-position: center;
+		    background-size: 100% 100%;
+		    margin: 5% 0 0 10%;
+		    float: left;
+		   
+		}
+		#contentCover{
+			width : 80%;
+			height : 85%;
+			background-color: white;
+			margin: 5% 0 0 10%;
+			border-radius: 0 0 5% 5%;
+			z-index: 110;
+    		position: relative;
+		}
+		#profileIntroCover{
+			width: 80%;
+			height : 100%;
+			float : left;
+			background-color: rgba(60, 110, 120, 1);
+		}
+		#profileIntro{
+			color : white;
+			font-size: 1.2em;
+			font-family: 'Montserrat', sans-serif;
+		}
+		#profile_name{
+		    font-size: 1.5em;
+		    float: left;
+		    margin: 0 0 0 28%;
+		    font-weight: bold;
+		}
 	</style>
 	</th:block>
 	<th:block layout:fragment="script">

@@ -3,22 +3,25 @@
  */
 
 			$(function(){
-				$('#sidebarBtnCover').click(function(e){
-					et = e.target;
+				$('#sidebarBtnCover').click(function(){
+					console.log("sidebarBtnCover 누름")
 					$('#sidebarBtn').html('<i class="fa fa-angle-double-left fa-lg" aria-hidden="true"></i>')
 					$('.iconName').css("display","block");
 					
-					if(parseInt($('#sidebar').css("width")) === parseInt(innerWidth*0.04)){
-						$('#sidebar').animate({
-							width : '7%'
+					if(parseInt($('#sidebarCover').css("width")) === parseInt((innerWidth*0.07)*0.5)){
+						console.log("50일 때 들어옴")
+						$('#sidebarCover').animate({
+							width : '70%'
 						},
 						200);
-					}else{
+					}else if(parseInt($('#sidebarCover').css("width")) === parseInt((innerWidth*0.07)*0.7)){
+						console.log("70일 때 들어옴")
 						$('.iconName').css("display","none");
-						$('#sidebar').animate({
-							width : '4%'
+						$('#sidebarCover').animate({
+							width : '50%'
 						},
 						200);
+						$('.iconName').css("display","block")
 						$('#sidebarBtn').html('<i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i>')
 					}
 				})

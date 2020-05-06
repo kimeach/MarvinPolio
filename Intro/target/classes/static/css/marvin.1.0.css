@@ -5,7 +5,7 @@ body{
 	height:100vh; 
 	margin : 0;
 	padding : 0;
-	background-color: black;
+	background-color: #ddd;
 
 }
 
@@ -13,14 +13,12 @@ body{
 	width : 100%;
 	height : 30%;
 	top : 0;
-	background-color: rgba(25,32,40,0.9);
 	position: absolute;
 	z-index: 999;
 	display : none;
 }
 
 #sidebar{
-	background-color : rgba(25,32,40,0.9);
 	width : 7%;
 	height : 80%;
 	z-index: 100;
@@ -33,7 +31,6 @@ body{
 }
 
 #topMenu{
-	 background-color : rgba(25,32,40,0.9);
 	width:100%;
 	 height:5%; 
 	float :left;
@@ -95,3 +92,24 @@ body{
 	
 	
  }
+ 
+ 	.commonColor{
+	    /* color: #dc630d; */
+	     /* color: rgba(255,60,70,1); */
+	     color : #ddd;
+	}
+	.commonBgColor{
+	background-color : rgba(60, 110, 120, 1);
+/* 	 background-color: rgba(25,32,40,0.9); 
+	  background-color: rgba(0, 93, 156, 1);  */
+	}
+	.sideBgColor{
+	 background-color:rgba(60, 110, 120, 0.9);
+	}
+	.fontColor{
+	color : #3e7700;
+	}
+	.remoteColor{
+	color : black;
+	}
+	

@@ -1,7 +1,7 @@
 	#Mainslide1{
 		width : 100%;
 		height:100%;
-		background-image: url( "../img/back2.jpg");
+		background-image: url( "../img/whiteBack4.jpg");
 		background-position: center;
 		background-size: 100% 100% ; 
 		position: absolute;
@@ -9,7 +9,7 @@
 	#Mainslide2{
 		width : 0%;
 		height:100%;
-		background-image: url( "../img/back3.jpg");
+		background-image: url( "../img/whiteBack.jpg");
 		background-position: center;
 		background-size: 100% 100% ; 
 		left : 100%;
@@ -19,10 +19,21 @@
 	#Mainslide3{
 		width : 0%;
 		height:100%;
-		background-image: url( "../img/back.jpg");
+		background-image: url( "../img/whiteBack3.jpg");
 		background-position: center;
 		background-size: 100% 100% ;
 		left : 100%; 
 		position: absolute;
 		display: none;
 	}
+	#Mainslide4{
+		width : 0%;
+		height:100%;
+		background-image: url( "../img/whiteBack5.jpg");
+		background-position: center;
+		background-size: 100% 100% ;
+		left : 100%; 
+		position: absolute;
+		display: none;
+	}
+	

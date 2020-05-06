@@ -7,14 +7,134 @@
 </head>
 
 <body class="container-fluid">
-	<div th:include="layout/searchPopup::search" id="search"></div> <!-- body layout -->
+	<div th:include="layout/searchPopup::search" id="search" class="commonBgColor"></div> <!-- body layout -->
+	<div th:include="layout/topMenu::topMenu" id="topMenu" class="commonBgColor"></div> <!-- sidebar layout -->
 	<div th:include="layout/sidebar::sidebar" id="sidebar"></div> <!-- sidebar layout -->
-	
-	<div id="MainslideCover"> </div>
-	
+		<div id="MainslideCover"> </div>
+	<div id="profileCover">
+		<div id="contentCover">
+		
+			<div id="pictureCover">
+				<div id="profilePicture" class="profilePicture"></div>
+				<div id="profile_name">polio 1</div>
+			</div>
+			<div id="pictureCover">
+				<div id="profilePicture2" class="profilePicture"></div>
+				<div id="profile_name">polio 2</div>
+			</div>
+			<div id="pictureCover">
+				<div id="profilePicture3" class="profilePicture"></div>
+				<div id="profile_name">polio 3</div>
+			</div>
+			<div id="pictureCover">
+				<div id="profilePicture4" class="profilePicture"></div>
+				<div id="profile_name">polio 4</div>
+			</div>
+			<div id="pictureCover">
+				<div id="profilePicture5" class="profilePicture"></div>
+				<div id="profile_name">polio 5</div>
+			</div>
+			<div id="pictureCover">
+				<div id="profilePicture6" class="profilePicture"></div>
+				<div id="profile_name">polio 6</div>
+			</div>
+			<div id="pictureCover">
+				<div id="profilePicture7" class="profilePicture"></div>
+				<div id="profile_name">polio 7</div>
+			</div>
+			<div id="pictureCover">
+				<div id="profilePicture8" class="profilePicture"></div>
+				<div id="profile_name">polio 8</div>
+			</div>
+		</div>
+	</div>
 	<th:block layout:fragment="css">
 		<style type="text/css">
-
+		#profileCover{
+			width : 100%;
+			height : 100%;
+			background-color: white;
+			display: inline-block;
+			background-image: url( "./img/whiteBack5.jpg");
+				background-position: center;
+			background-size: 100% 100% ;
+			
+		}
+		#profileMainCover{
+		width : 100%;
+		height : 40%;
+		box-shadow: 5px 5px 20px grey;
+		}
+		#pictureCover{
+			width : 20%;
+			height : 40%;
+			float: left;
+			box-shadow: 5px 5px 20px grey;
+			margin: 2% 2% 2% 3%;
+		}
+		.profilePicture{
+			width: 80%;
+		    height: 80%;
+		    border-radius: 50%;
+		    
+		    background-position: center;
+		    background-size: 100% 100%;
+		    margin: 5% 0 0 10%;
+		    float: left;
+		   
+		}
+		#profilePicture{
+			background-image: url(./img/whiteBack3.jpg);
+		}
+		#profilePicture2{
+			background-image: url(./img/whiteBack4.jpg);
+		}
+		#profilePicture3{
+			background-image: url(./img/whiteBack5.jpg);
+		}
+		#profilePicture4{
+			background-image: url(./img/whiteBack2.jpg);
+		}
+		#profilePicture5{
+			background-image: url(./img/back.jpg);
+		}
+		#profilePicture6{
+			background-image: url(./img/back2.jpg);
+		}
+		#profilePicture7{
+			background-image: url(./img/back3.jpg);
+		}
+		#profilePicture8{
+			background-image: url(./img/back5.jpg);
+		}
+		
+		#contentCover{
+			width : 80%;
+			height : 85%;
+			background-color: white;
+			margin: 5% 0 0 10%;
+			border-radius: 0 0 5% 5%;
+			z-index: 110;
+    		position: relative;
+		}
+		#profileIntroCover{
+			width: 80%;
+			height : 100%;
+			float : left;
+			background-color: rgba(60, 110, 120, 1);
+		}
+		#profileIntro{
+			color : white;
+			font-size: 1.2em;
+			font-family: 'Montserrat', sans-serif;
+		}
+		#profile_name{
+		    font-size: 1.8em;
+		    float: left;
+		    margin: 2% 35%;
+		    font-weight: bold;
+		    font-family: 'Fira Sans', sans-serif;
+		}
 	</style>
 	</th:block>
 	<th:block layout:fragment="script">

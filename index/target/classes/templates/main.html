@@ -6,7 +6,7 @@
 <head th:include="layout/headerSetting::head">
 </head>
 	<div th:fragment="Main">
-		<div id="ContentCover">
+		<div id="ContentCover" class="fontColor">
 			<div id="mainContent">
 				PortPolio MainContent Introduce
 				</br> Title Name
@@ -15,7 +15,7 @@
 				This portfolio is a shopping mall creation portfolio.</br>
 				There are simple functions such as purchase, sale, Q & A, and comment.
 			</div>
-			<button id="learnMoreBtn">learn more &nbsp;→</button>
+			<button id="learnMoreBtn" class="commonColor commonBgColor">Learn more &nbsp;→</button>
 		</div>
 	<th:block layout:fragment="css">
 		<style type="text/css">
@@ -23,7 +23,6 @@
 				margin: 16% 0 0 61%;
     			width: 39%;
 			    height: 57%;
-			    color: #ddd;
 			    position: absolute;
 			     /* background-color: rgba(85,0,0,0.5);  */
 			}
@@ -39,9 +38,6 @@
 				margin: 5% 0 0 0;
 			}
 			#learnMoreBtn{
-				color: rgba(255,60,70,1);
-				background-color: rgba(25,32,40,1);
-				/* border-color: rgba(25,32,40,1); */
 				font-size : 1.5em;
 				width : 35%;
 				height: 15%;
