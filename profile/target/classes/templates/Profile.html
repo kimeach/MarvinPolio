@@ -13,23 +13,102 @@
 		<div id="MainslideCover"> </div>
 	<div id="profileCover">
 		<div id="contentCover">
-			<div id="profileMainCover">
+		
+			<div id="profileMainCover">  <!-- 프로필 사진, 이름, 직업 등등 -->
 				<div id="pictureCover">
 					<div id="profilePicture"></div>
-					<div id="profile_name">
-							Kim Ki Moon
-						</div>
 				</div>
-				
-				
-				
  				<div id="profileIntroCover">
 					<div id="profileIntro">
-						
-						
+						<div id="introNameCover">
+							<div id="introName">
+								Kim Ki Moon
+							</div>
+							<div id="iconBox">
+								<i class="fa fa-github" aria-hidden="true"></i>
+								
+								<i class="fa fa-facebook-square" aria-hidden="true" style="margin-left : 20%"></i>
+							</div>
+						</div>
+						<div id="introJobCover">
+							<div id="introJob">
+							Web Programmer
+							</div>
+						</div>
 					</div>
-				</div> 
+					<div id="profilePhone">
+						<div id="introPhoneCover">
+							<div id="introPhone">
+								<i class="fa fa-phone" aria-hidden="true"></i> 
+								phone : 010-7657-5746
+							</div>
+						</div>
+						<div id="introEmailCover">
+							<div id="introEmail">
+							<i class="fa fa-envelope-o" aria-hidden="true"></i>
+							Email : kimeach@naver.com
+							</div>
+						</div>
+						
+						<div id="introTabCover">
+							<div class="introTab">
+								<div class="tabMenu" id="introduce">Introduce</div>
+							</div>
+							<div class="introTab">
+								<div class="tabMenu" id="career">Career</div>
+							</div>
+							<div class="introTab">
+								<div class="tabMenu" id="skill">Skill</div>
+							</div>
+							<div class="introTab">
+								<div class="tabMenu" id="etc">Etc...</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
 			</div>
+			
+			<div id="introduceCover" > <!-- 자기소개  -->
+				<div id="introduceView" class="view">
+					<p>안녕하세요.</p> 
+					<p>조직 내에서 경력을 쌓고 회사의 이익을 위해 조직적이고 목표 지향적 인 기술을 제공 할 수있는 직책을 찾고 있습니다.</p>
+				</div>
+				<div id="careerView" class="view">
+				
+				<div id="carrerLine"> </div>
+				<div id="carrerLine2"> </div>
+				<div id="carrerLine3"> </div>
+				<div id="carrerLine4"> </div>
+				<div id="carrerLine5"> </div>
+				<div id="carrerCircle2"> <span class="carrerCircleSpan">1</span> </div>
+				<div id="carrerCircle3"> <span class="carrerCircleSpan">2</span> </div>
+				<div id="carrerCircle4"> <span class="carrerCircleSpan">3</span> </div>
+				<div id="carrerCircle5"> <span class="carrerCircleSpan">4</span> </div>
+				
+					<p style="position: absolute;top: 46%;left: 12%;"> <i class="fa fa-building" aria-hidden="true"></i> 엔셀 주식회사 솔루션 웹개발 부서 입사 (2019.08)</p>
+					<p style="position: absolute;top: 79%;left: 31%;"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> 호서대학교 정보보호 학과 졸업 (2019.08)</p>
+					<p style="position: absolute;top: 46%;left: 52%;"> <i class="fa fa-id-card-o" aria-hidden="true"></i> 육군 만기 전역 (2016.10)</p>
+				</div>
+				<div id="skillView" class="view">
+					
+					<div>Spring</div>
+				
+					<div>Java</div>
+					
+					<div>Javascript</div>
+					<div>BootStrap</div>
+					<div>Jquery</div>
+					<div>SQL</div>
+					
+				
+				</div>
+				<div id="etcView" class="view">
+				d
+				</div>
+			</div>
+			
+			
 		</div>
 	</div>
 	<th:block layout:fragment="css">
@@ -62,7 +141,7 @@
 		    background-image: url(./img/Profile_Image.jpg);
 		    background-position: center;
 		    background-size: 100% 100%;
-		    margin: 5% 0 0 10%;
+		    margin: 10% 0 0 10%;
 		    float: left;
 		   
 		}
@@ -85,12 +164,228 @@
 			color : white;
 			font-size: 1.2em;
 			font-family: 'Montserrat', sans-serif;
+			width : 80%;
+			height : 50%;
+			border-bottom : 2px solid red;
+			margin: 0 0 0 10%;
 		}
-		#profile_name{
-		    font-size: 1.5em;
-		    float: left;
-		    margin: 0 0 0 28%;
+		
+		#introNameCover{
+		width : 100%;
+		height : 50%;
+		}
+		#introName{
+		font-size: 2em;
+		font-weight: bold;
+		margin : 4% 0 0 0;
+		display: inline-block;
+		font-family: 'Barlow', sans-serif;
+		}
+		
+		
+		
+		#introJobCover{
+		width : 100%;
+		height : 50%;
+		}
+		#introJob{
+		font-size: 1em;
+		font-weight: bold;
+		margin : 3% 0 0 0;
+		display: inline-block;
+		}
+		#profilePhone{
+			font-size: 1.2em;
+			font-family: 'Montserrat', sans-serif;
+			width : 80%;
+			height : 50%;
+			margin: 0 0 0 10%;
+		}
+		
+		
+		#introPhoneCover{
+			width : 100%;
+			height : 40%;
+		}
+		#introPhone{
+			color : white;
+			font-size: 1em;
+			font-weight: bold;
+			margin : 2% 0 0 0;
+			display: inline-block;
+		}
+		introEmailCover{
+		
+			width : 100%;
+			height : 50%;
+		}
+		#introEmail{
+			color : white;
+			font-size: 1em;
+			font-weight: bold;
+			display: inline-block;
+		}
+		
+		#iconBox{
+			width : 6%;
+		    float: right;
+		}
+		
+		#introTabCover{
+			width : 100%;
+			height: 30%;
+			    margin: 2% 0 0 0;
+		}
+		.introTab{
+			width : 24.4%;
+			height : 100%;
+			background-color: white;
+			float : left;
+			border: 3px solid rgba(60, 110, 120, 1);
+			box-shadow : 2px 2px 5px gray;
+			margin: 1% 0 0 0;
+			color :rgba(60, 110, 120, 1);
+			font-size: 1.3em;
 		    font-weight: bold;
+		    text-align: center;
+		    display: table;
+		}
+		.tabMenu{
+			display: table-cell;
+    		vertical-align: middle;
+    		font-family: 'Barlow', sans-serif;
+    		cursor: pointer;
+		}
+		
+		#introduceCover{
+			width : 100%;
+			height : 60%;
+		}
+		
+		#introduceView{
+			display: block;
+		}
+		
+		#careerView{
+			display: none;
+		}
+		
+		#skillView{
+			display: none;
+		}
+		
+		#etcView{
+			display: none;
+		}
+		
+		.view{
+			width: 96%;
+		    height: 85%;
+		    margin: 2% 0 0 2%;
+			font-size: 1.5em;
+		}
+		
+		#carrerLine{
+			width: 96%;
+		    height: 3px;
+		    background-color: rgba(60, 110, 120, 1);
+		    position: absolute;
+		    top: 69%;
+		}
+		
+		#carrerLine2{
+			width: 3px;
+		    height: 20%;
+		    background-color: rgba(60, 110, 120, 1);
+		    position: absolute;
+		    top: 49%;
+		    left: 10%;
+		}
+		
+		#carrerLine3{
+			width: 3px;
+		    height: 20%;
+		    background-color: rgba(60, 110, 120, 1);
+		    position: absolute;
+		    top: 69%;
+		    left: 30%;
+		}
+		
+		#carrerLine4{
+			width: 3px;
+		    height: 20%;
+		    background-color: rgba(60, 110, 120, 1);
+		    position: absolute;
+		    top: 49%;
+		    left: 50%;
+		}
+		
+		#carrerLine5{
+			width: 3px;
+		    height: 20%;
+		    background-color: rgba(60, 110, 120, 1);
+		    position: absolute;
+		    top: 69%;
+		    left: 70%;
+		}
+		#carrerCircle2{
+			width: 50px;
+		    height: 50px;
+		    background-color: rgba(60, 110, 120, 1);
+		    position: absolute;
+		    border-radius: 50%;
+		    top: 66%;
+		    left: 8.5%;
+		    text-align: center;
+		    font-family: 'Barlow', sans-serif;
+		    color : white;
+	        display: table;
+		}
+		
+		#carrerCircle3{
+			width: 50px;
+		    height: 50px;
+		    background-color: rgba(60, 110, 120, 1);
+		    position: absolute;
+		    border-radius: 50%;
+		    top: 66%;
+		    left: 28.5%;
+		    text-align: center;
+		    font-family: 'Barlow', sans-serif;
+		    color : white;
+	        display: table;
+		}
+		
+		#carrerCircle4{
+			width: 50px;
+		    height: 50px;
+		    background-color: rgba(60, 110, 120, 1);
+		    position: absolute;
+		    border-radius: 50%;
+		    top: 66%;
+		    left: 48.5%;
+		    text-align: center;
+		    font-family: 'Barlow', sans-serif;
+		    color : white;
+	        display: table;
+		}
+		
+		#carrerCircle5{
+			width: 50px;
+		    height: 50px;
+		    background-color: rgba(60, 110, 120, 1);
+		    position: absolute;
+		    border-radius: 50%;
+		    top: 66%;
+		    left: 68.5%;
+		    text-align: center;
+		    font-family: 'Barlow', sans-serif;
+		    color : white;
+	        display: table;
+		}
+		.carrerCircleSpan{
+			display: table-cell;
+			vertical-align: middle;
 		}
 	</style>
 	</th:block>
@@ -98,7 +393,33 @@
 	 <th:block th:include="layout/headerSetting::script"></th:block>
 		<script type="text/javascript" th:inline="javascript">
 			$(function(){
-			
+				$('#introduce').click(function(){
+					$("#introduceView").css("display","block");
+					$("#careerView").css("display","none");
+					$("#skillView").css("display","none");
+					$("#etcView").css("display","none");
+				})
+				
+				$('#career').click(function(){
+					$("#introduceView").css("display","none");
+					$("#careerView").css("display","block");
+					$("#skillView").css("display","none");
+					$("#etcView").css("display","none");
+				})
+				
+				$('#skill').click(function(){
+					$("#introduceView").css("display","none");
+					$("#careerView").css("display","none");
+					$("#skillView").css("display","block");
+					$("#etcView").css("display","none");
+				})
+				
+				$('#etc').click(function(){
+					$("#introduceView").css("display","none");
+					$("#careerView").css("display","none");
+					$("#skillView").css("display","none");
+					$("#etcView").css("display","block");
+				})
 			});	
 		</script>
 	</th:block>

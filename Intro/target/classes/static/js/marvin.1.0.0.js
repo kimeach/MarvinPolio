@@ -10,6 +10,7 @@
 					
 					if(parseInt($('#sidebarCover').css("width")) === parseInt((innerWidth*0.07)*0.5)){
 						console.log("50일 때 들어옴")
+						$('.iconName').css("display","block");
 						$('#sidebarCover').animate({
 							width : '70%'
 						},
@@ -21,7 +22,6 @@
 							width : '50%'
 						},
 						200);
-						$('.iconName').css("display","block")
 						$('#sidebarBtn').html('<i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i>')
 					}
 				})
