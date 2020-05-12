@@ -9,8 +9,7 @@
 <body class="container-fluid">
 	<div th:include="layout/searchPopup::search" id="search" class="commonBgColor"></div> <!-- body layout -->
 	<div th:include="layout/topMenu::topMenu" id="topMenu" class="commonBgColor"></div> <!-- sidebar layout -->
-	<div th:include="layout/sidebar::sidebar" id="sidebar"></div> <!-- sidebar layout -->
-		<div id="MainslideCover"> </div>
+	<div th:include="layout/subMenu::subMenu" id="subMenu" class="commonBgColor"></div> <!-- sidebar layout -->
 	<div id="profileCover">
 		<div id="contentCover">
 		
@@ -18,8 +17,8 @@
 				<div id="pictureCover">
 					<div id="profilePicture"></div>
 				</div>
- 				<div id="profileIntroCover" class="commonBgColor">
-					<div id="profileIntro" class="commonColor">
+ 				<div id="profileIntroCover" class="profileCommonBgColor">
+					<div id="profileIntro" class="profileCommonColor">
 						<div id="introNameCover">
 							<div id="introName">
 								Kim Ki Moon
@@ -39,13 +38,13 @@
 					</div>
 					<div id="profilePhone">
 						<div id="introPhoneCover">
-							<div id="introPhone" class="commonColor">
+							<div id="introPhone" class="profileCommonColor">
 								<i class="fa fa-phone" aria-hidden="true"></i> 
 								phone : 010-7657-5746
 							</div>
 						</div>
 						<div id="introEmailCover">
-							<div id="introEmail" class="commonColor">
+							<div id="introEmail" class="profileCommonColor">
 							<i class="fa fa-envelope-o" aria-hidden="true"></i>
 							Email : kimeach@naver.com
 							</div>
@@ -77,21 +76,21 @@
 				</div>
 				<div id="careerView" class="view">
 				
-					<div id="carrerLine" class="commonBgColor"> </div>
-					<div id="carrerLine2" class="commonBgColor"> </div>
-					<div id="carrerLine3" class="commonBgColor"> </div>
-					<div id="carrerLine4" class="commonBgColor"> </div>
-					<div id="carrerLine5" class="commonBgColor"> </div>
-					<div id="carrerCircle2" class="commonBgColor">
+					<div id="carrerLine" class="profileCommonBgColor"> </div>
+					<div id="carrerLine2" class="profileCommonBgColor"> </div>
+					<div id="carrerLine3" class="profileCommonBgColor"> </div>
+					<div id="carrerLine4" class="profileCommonBgColor"> </div>
+					<div id="carrerLine5" class="profileCommonBgColor"> </div>
+					<div id="carrerCircle2" class="profileCommonBgColor">
 						<span class="carrerCircleSpan">1</span>
 					</div>
-					<div id="carrerCircle3" class="commonBgColor">
+					<div id="carrerCircle3" class="profileCommonBgColor">
 						<span class="carrerCircleSpan">2</span>
 					</div>
-					<div id="carrerCircle4" class="commonBgColor">
+					<div id="carrerCircle4" class="profileCommonBgColor">
 						<span class="carrerCircleSpan">3</span>
 					</div>
-					<div id="carrerCircle5" class="commonBgColor">
+					<div id="carrerCircle5" class="profileCommonBgColor">
 						<span class="carrerCircleSpan">4</span>
 					</div>
 					<p style="position: absolute;top: 46%;left: 12%;">
@@ -122,8 +121,8 @@
 					
 					</div>
 				<div id="skillView" class="view">
-					<div id="skillLine1" class="commonBgColor"></div>
-					<div id="skillLine2" class="commonBgColor"></div>
+					<div id="skillLine1" class="profileCommonBgColor"></div>
+					<div id="skillLine2" class="profileCommonBgColor"></div>
 					
 					<div id="skillCover" >
 						<div id="frontViewCover" class="skillView">
@@ -217,7 +216,7 @@
 		</div>
 	</div>
 	<th:block layout:fragment="css">
-		<link th:href="@{/css/profile.css?version=6}"  rel="stylesheet" type="text/css">
+		<link th:href="@{/css/profile.css?version=9}"  rel="stylesheet" type="text/css">
 	</th:block>
 	<th:block layout:fragment="script">
 	 <th:block th:include="layout/headerSetting::script"></th:block>
@@ -229,8 +228,7 @@
 			
 				$('#introduce').click(function(){
 					$('.graph').css("width","10%");
-					$('.introTab').css("border","3px solid rgba(0, 93, 156, 1)");
-					$('.introTab').css("box-shadow","2px 2px 5px grey");
+					$('.introTab').css("border","3px solid #23284e");
 					$(this).parent().css("border-bottom","none");
 					$(this).parent().css("box-shadow","none");
 					$("#introduceView").css("display","block");
@@ -242,8 +240,7 @@
 				$('#career').click(function(){
 					$('.graph').css("width","10%");
 					
-					$('.introTab').css("border","3px solid rgba(0, 93, 156, 1)");
-					$('.introTab').css("box-shadow","2px 2px 5px grey");
+					$('.introTab').css("border","3px solid #23284e");
 					$(this).parent().css("border-bottom","none");
 					$(this).parent().css("box-shadow","none");
 					$("#introduceView").css("display","none");
@@ -254,8 +251,7 @@
 				
 				$('#skill').click(function(){
 					$('.graph').css("width","10%");
-					$('.introTab').css("border","3px solid rgba(0, 93, 156, 1)");
-					$('.introTab').css("box-shadow","2px 2px 5px grey");
+					$('.introTab').css("border","3px solid #23284e");
 					$(this).parent().css("border-bottom","none");
 					$(this).parent().css("box-shadow","none");
 					$("#introduceView").css("display","none");
@@ -276,8 +272,7 @@
 				$('#etc').click(function(){
 					
 					$('.graph').css("width","10%");
-					$('.introTab').css("border","3px solid rgba(0, 93, 156, 1)");
-					$('.introTab').css("box-shadow","2px 2px 5px grey");
+					$('.introTab').css("border","3px solid #23284e");
 					$(this).parent().css("border-bottom","none");
 					$(this).parent().css("box-shadow","none");
 					$("#introduceView").css("display","none");

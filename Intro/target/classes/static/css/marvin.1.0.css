@@ -19,26 +19,37 @@ body{
 }
 
 #sidebar{
-	width : 7%;
-	height : 80%;
-	z-index: 999;
-	top : 7%;
-	float :left;
-	position: fixed;
-	margin : 0;
-	padding : 0;
-	text-align: center;
+width: 7%;
+    height: 80%;
+    z-index: 999;
+    top: 7%;
+    float: right;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: absolute;
+    left: 93%;
 }
 
 #topMenu{
 	width:100%;
-	height:6%; 
+	height:120px; 
 	float :left;
 	position: fixed;
 	z-index: 101;
 	/* box-shadow: 0.5px 0.5px 5px #ddd; */
 }   
-
+#subMenu{
+	width: 50%;
+    height: 150px;
+    position: absolute;
+    z-index: 999;
+    top: 135px;
+    display: none;
+    box-shadow: 3px 3px 10px 0px #ececec;
+    background-color: white;
+    margin: 0 0 0 25%;
+}
 #Main{
 	position: relative;
 	left :0;
@@ -94,19 +105,19 @@ body{
  }
  /* 공통 부분 */
  	.commonColor{
-	    /* color: #dc630d; 
-	      color: rgba(255,60,70,1);*/ 
-	      color : white; 
+	      color : #641be1; 
 	}
 	.commonBgColor{
 /* 	 background-color: rgba(25,32,40,1); 
 	background-color : rgba(60, 110, 120, 1);
 	*/  
-	  background-color: rgba(0, 93, 156, 1);
+/* 	  background-color: rgba(0, 93, 156, 1); */
+	   background-color: white;
 	}
 	.sideBgColor{
 	/* background-color:rgba(60, 110, 120, 0.9);*/
-	  background-color: rgba(25,32,40,0.9); 
+	  /* background-color: rgba(25,32,40,0.9);  */
+	  background-color: rgb(173, 141, 141);
 	}
 	.fontColor{
 	color : #000000;
@@ -134,3 +145,30 @@ body{
 	    top: 2%;
 	    left: 15%;
 	}
+	
+	#contentCover{
+		width : 80%;
+		height : 81%;
+		background-color: white;
+		margin: 7% 0 0 10%;
+		border-radius: 0 0 5% 5%;
+		z-index: 110;
+   		position: relative;
+   		box-shadow: 2px 2px 20px grey;
+	}
+		
+		#profileCover{
+			width : 100%;
+			height : 100%;
+			background-color: #ececec;
+			display: inline-block;
+				background-position: center;
+			background-size: 100% 100% ;
+			
+		}
+		.profileCommonBgColor{
+			background-color: #23284e;
+		}
+		.profileCommonColor{
+			color: white;
+		}

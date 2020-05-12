@@ -9,8 +9,8 @@
 <body class="container-fluid">
 	<div th:include="layout/searchPopup::search" id="search" class="commonBgColor"></div> <!-- body layout -->
 	<div th:include="layout/topMenu::topMenu" id="topMenu" class="commonBgColor"></div> <!-- sidebar layout -->
-	<div th:include="layout/sidebar::sidebar" id="sidebar"></div> <!-- sidebar layout -->
-		<div id="MainslideCover"> </div>
+	<div th:include="layout/subMenu::subMenu" id="subMenu" class="commonBgColor"></div> <!-- sidebar layout -->
+	
 	<div id="profileCover">
 		<div id="contentCover">
 		
@@ -217,7 +217,7 @@
 		</div>
 	</div>
 	<th:block layout:fragment="css">
-		<link th:href="@{/css/profile.css?version=6}"  rel="stylesheet" type="text/css">
+		<link th:href="@{/css/profile.css?version=8}"  rel="stylesheet" type="text/css">
 	</th:block>
 	<th:block layout:fragment="script">
 	 <th:block th:include="layout/headerSetting::script"></th:block>

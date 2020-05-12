@@ -3,41 +3,85 @@
 xmlns:th="http://www.thymeleaf.org"
 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<div th:fragment="topMenu">
-	<div class="commonColor" id="TitleMenu">Marvin</div>
-	<div id="faBtnCover">
-		
-		<i class="fa fa-bell fa-lg commonColor top-icon" aria-hidden="true"></i>
-		<i class="fa fa-cog fa-lg commonColor top-icon" aria-hidden="true"></i>
-		<i class="fa fa-sign-in fa-lg commonColor top-icon" aria-hidden="true"></i>
-		
+	
+	<div class="commonColor" id="TitleMenuCover"> <!-- title -->
+		<div id="TitleMenu">
+			J A R V I S
+		</div>
+	</div>
+	
+	<div id="MainMenuCover" >
+		<div class="MainMenuClass" id="MainMenu_Profile">
+<!-- 			Profile -->
+			프로필
+		</div>
+		<div class="MainMenuClass" id="MainMenu_MyPortPolio">
+<!-- 			My PortPolio -->
+			포트폴리오
+		</div>
+		<div class="MainMenuClass" id="MainMenu_Comment">
+<!-- 			Comment -->
+			답변
+		</div>
+		<div class="MainMenuClass" id="MainMenu_History">
+<!-- 			History -->
+			연혁
+		</div>
+		<div class="MainMenuClass" id="searchBtn-search">
+<!-- 			Search -->
+			검색
+		</div>
 	</div>
 
 
 		<th:block layout:fragment="css">
 			<style>
+				#TitleMenuCover{
+					width: 15%;
+				    height: 100%;
+				    cursor: pointer;
+				    font-size: 2em;
+/* 				    font-family: 'Open Sans', sans-serif; */
+				    font-family: 'Raleway', sans-serif;
+				    display: table;
+				    float: left;
+				    margin: 0 0 0 10%;
+				}
 				#TitleMenu{
-					width : 5%;
+					display: table-cell;
+					vertical-align: middle;
+					padding: 0 0 0 15%;
+				}
+				#MainMenuCover{
+					width: 30%;
+				    height: 100%;
+				    float: left;
+				    font-size: 1.3em;
+				    font-family: 'Open Sans', sans-serif;
+				    font-weight: 300;
+				    display: table;
+				    margin: 0 10%;
+				}
+				
+				.MainMenuClass{
+					height : 100%;
+					width : 20%;
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
 					cursor: pointer;
-					font-size: 2em;
-					font-family: 'Girassol', cursive;
-					margin-left: 0.5%;
-					display: inline-block;
 				}
-				#faBtnCover{
-					display: inline-block;
-				    width: 7%;
-    				margin: 0 0 0 86%;
+				
+				.MainMenuClass:hover{
+					transition : all .2s ease-in;
+					color : #641be1;
 				}
-			.top-icon{
-		    width: 30%;
-			}
 			</style>
 		</th:block>
 		<th:block layout:fragment="script">
 			<th:block th:fragment="script">
-		
 				<script>
-			
+
 				</script>
 			</th:block>
 		</th:block>

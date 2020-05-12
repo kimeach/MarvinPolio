@@ -3,8 +3,6 @@
  xmlns:th="http://www.thymeleaf.org" 
  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-<head th:include="layout/headerSetting::head">
-</head>
 	<div th:fragment="Slide">
 		<div id="Mainslide1" class="Mainslide" data-slide="1" data-slideShow="start">
 		</div>
@@ -16,10 +14,6 @@
 		</div>
 	<th:block layout:fragment="css">
 		<link th:href="@{/css/slide.css?version=3}"  rel="stylesheet" type="text/css">
-	</th:block>
-	<th:block layout:fragment="script">
-	 <th:block th:include="layout/headerSetting::script"></th:block>
-		
 	</th:block>
 	</div>
 </html>

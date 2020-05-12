@@ -2,6 +2,42 @@
  * 2020년 04월 29일 최초 생성
  */
 
+				$(function(){
+					$("#TitleMenu").click(function(){
+						location.href ="index";
+					})
+					
+					$("#MainMenu_Profile").click(function(){
+						location.href ="profile";
+					})
+					
+					$("#MainMenu_MyPortPolio").click(function(){
+						console.log("1")
+						
+						$("#subMenu").slideToggle("middle");
+						
+						/*location.href ="myPortPolio";*/
+					})
+					
+					$("#MainMenu_Comment").click(function(){
+						location.href ="comment";
+					})
+					
+					$("#MainMenu_History").click(function(){
+						location.href ="history";
+					})
+					
+					$('.fa-times').click(function(){
+						$('#search').slideUp("slow");
+					})
+					
+					$("#searchBtn-search").click(function(){
+						$("#search").slideToggle("slow");
+						
+					})
+					
+				});	
+				
 			$(function(){
 				$('#sidebarBtnCover').click(function(){
 					console.log("sidebarBtnCover 누름")
