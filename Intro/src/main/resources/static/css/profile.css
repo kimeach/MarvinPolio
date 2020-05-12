@@ -1,0 +1,331 @@
+#profileCover{
+			width : 100%;
+			height : 100%;
+			background-color: white;
+			display: inline-block;
+				background-position: center;
+			background-size: 100% 100% ;
+			
+		}
+		#profileMainCover{
+		width : 100%;
+		height : 40%;
+		/* box-shadow: 5px 5px 20px grey; */
+		}
+		#pictureCover{
+			width : 20%;
+			height : 100%;
+			float: left;
+			box-shadow: 2px 2px 5px grey;
+		}
+		#profilePicture{
+			width: 90%;
+		    height: 90%;
+		    border-radius: 50%;
+		    background-image: url(../img/myProfile.jpg);
+		    background-position: center;
+		    background-size: 100% 100%;
+		    margin: 5% 0 0 5%;
+		    float: left;
+		   
+		}
+		#contentCover{
+			width : 80%;
+			height : 85%;
+			background-color: white;
+			margin: 5% 0 0 10%;
+			border-radius: 0 0 5% 5%;
+			z-index: 110;
+    		position: relative;
+    		box-shadow: 2px 2px 20px grey;
+		}
+		#profileIntroCover{
+			width: 80%;
+			height : 100%;
+			float : left;
+		}
+		#profileIntro{
+			font-size: 1.2em;
+			font-family: 'Montserrat', sans-serif;
+			width : 80%;
+			height : 50%;
+			border-bottom : 2px solid red;
+			margin: 0 0 0 10%;
+		}
+		
+		#introNameCover{
+		width : 100%;
+		height : 50%;
+		}
+		#introName{
+		font-size: 2em;
+		font-weight: bold;
+		margin : 4% 0 0 0;
+		display: inline-block;
+		font-family: 'Barlow', sans-serif;
+		}
+		
+		
+		
+		#introJobCover{
+		width : 100%;
+		height : 50%;
+		}
+		#introJob{
+		font-size: 1em;
+		font-weight: bold;
+		margin : 3% 0 0 0;
+		display: inline-block;
+		}
+		#profilePhone{
+			font-size: 1.2em;
+			font-family: 'Montserrat', sans-serif;
+			width : 80%;
+			height : 50%;
+			margin: 0 0 0 10%;
+		}
+		
+		
+		#introPhoneCover{
+			width : 100%;
+			height : 40%;
+		}
+		#introPhone{
+			font-size: 1em;
+			font-weight: bold;
+			margin : 2% 0 0 0;
+			display: inline-block;
+		}
+		introEmailCover{
+		
+			width : 100%;
+			height : 50%;
+		}
+		#introEmail{
+			font-size: 1em;
+			font-weight: bold;
+			display: inline-block;
+		}
+		
+		#iconBox{
+			width : 6%;
+		    float: right;
+		}
+		
+		#introTabCover{
+			width : 100%;
+			height: 30%;
+			    margin: 1% 0 0 0;
+		}
+		.introTab{
+			width : 24.4%;
+			height : 100%;
+			background-color: white;
+			float : left;
+			border: 3px solid rgba(0, 93, 156, 1);
+			box-shadow : 2px 2px 5px gray;
+			margin: 1% 0 0 0;
+			color :rgba(0, 93, 156, 1);
+			font-size: 1.3em;
+		    font-weight: bold;
+		    text-align: center;
+		    display: table;
+		}
+		.tabMenu{
+			display: table-cell;
+    		vertical-align: middle;
+    		font-family: 'Barlow', sans-serif;
+    		cursor: pointer;
+		}
+		
+		#introduceCover{
+			width : 100%;
+			height : 60%;
+		}
+		
+		#introduceView{
+			display: block;
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+		
+		#careerView , #skillView , #etcView{
+			display: none;
+		}
+		
+		
+		
+		.view{
+			width: 96%;
+		    height: 85%;
+		    margin: 2% 0 0 2%;
+			font-size: 1.5em;
+		}
+		
+		#carrerLine{
+			width: 96%;
+		    height: 3px;
+		    position: absolute;
+		    top: 69%;
+		}
+		
+		#carrerLine2{
+			width: 3px;
+		    height: 20%;
+		    position: absolute;
+		    top: 49%;
+		    left: 10%;
+		}
+		
+		#carrerLine3{
+			width: 3px;
+		    height: 20%;
+		    position: absolute;
+		    top: 69%;
+		    left: 20%;
+		}
+		
+		#carrerLine4{
+			width: 3px;
+		    height: 20%;
+		    position: absolute;
+		    top: 49%;
+		    left: 35%;
+		}
+		
+		#carrerLine5{
+			width: 3px;
+		    height: 20%;
+		    position: absolute;
+		    top: 69%;
+		    left: 56%;
+		}
+		#carrerCircle2{
+			width: 50px;
+		    height: 50px;
+		    position: absolute;
+		    border-radius: 50%;
+		    top: 66%;
+		    left: 8.5%;
+		    text-align: center;
+		    font-family: 'Barlow', sans-serif;
+		    color : white;
+	        display: table;
+		}
+		
+		#carrerCircle3{
+			width: 50px;
+		    height: 50px;
+		    position: absolute;
+		    border-radius: 50%;
+		    top: 66%;
+		    left: 18.5%;
+		    text-align: center;
+		    font-family: 'Barlow', sans-serif;
+		    color : white;
+	        display: table;
+		}
+		
+		#carrerCircle4{
+			width: 50px;
+		    height: 50px;
+		    position: absolute;
+		    border-radius: 50%;
+		    top: 66%;
+		    left: 33.5%;
+		    text-align: center;
+		    font-family: 'Barlow', sans-serif;
+		    color : white;
+	        display: table;
+		}
+		
+		#carrerCircle5{
+			width: 50px;
+		    height: 50px;
+		    position: absolute;
+		    border-radius: 50%;
+		    top: 66%;
+		    left: 54.5%;
+		    text-align: center;
+		    font-family: 'Barlow', sans-serif;
+		    color : white;
+	        display: table;
+		}
+		.carrerCircleSpan{
+			display: table-cell;
+			vertical-align: middle;
+		}
+		
+		#skillLine1{
+			width: 96%;
+		    height: 3px;
+		    position: absolute;
+		    top: 69%;
+		}
+		
+		#skillLine2{
+			width: 3px;
+		    height: 50%;
+		    position: absolute;
+		    top: 45%;
+		    left: 50%;
+		}
+		#skillCover{
+		    width: 100%;
+		    height: 100%;
+		}
+		.skillView{
+			width : 50%;
+			float: left;
+		    height: 48%;
+		    display: table;
+		        margin: 1% 0 0 0;
+		}
+		.skillTitle{
+			font-size: 1.5em;
+			font-family: 'Barlow', sans-serif;
+			display: table-cell;
+    		vertical-align: middle;
+    		padding: 0 0 0 1%;
+    		width: 30%;
+    		font-weight: bold;
+		}
+		.skillItem{
+			font-size: 1.2em;
+			font-family: 'Barlow', sans-serif;
+			width: 100%;
+			margin: 10% 0;
+			height: 15%;
+			color: rgba(60, 110, 120, 1);
+		}
+		.graph{
+		    width: 10%;
+		    height: 15%;
+		    margin: 5% 0;
+		    background-color: green;
+		    box-shadow: 2px 5px 5px grey;
+		}
+		
+		.skillItemCover{
+			width : 30%;
+			height: 100%;
+			float: left;
+		}
+		
+		.graphCover{
+			width: 60%;
+		    height: 100%;
+		    float: left;
+		}
+		
+		.graphScore{
+			float : right;
+			color : white;
+			margin: 0 2% 0 0;
+		}
+		
+		.fa-github , .fa-facebook-square{
+			cursor: pointer;
+		}
+		p{
+			font-family: 'Noto Sans KR', sans-serif;
+		}

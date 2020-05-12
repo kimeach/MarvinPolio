@@ -33,7 +33,7 @@ public class historyController {
 	@GetMapping
 	public ModelAndView getHistory() {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("history");
+		mav.setViewName("profileTest");
 		return mav;
 	}
 }
