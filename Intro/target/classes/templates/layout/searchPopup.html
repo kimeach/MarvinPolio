@@ -4,7 +4,7 @@
 xmlns:th="http://www.thymeleaf.org"
 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<div th:fragment="search">
-		<i class="fa fa-times fa-lg"> </i>
+		<i class="fa fa-times fa-lg" id="searchCloseBtn"> </i>
 		
 		<input type="text" id="search_input" placeholder="search input..">
 		
@@ -21,13 +21,13 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 					height : 2em;
 					background-color:  rgba(25,32,40,0);
 					border: none;
-					border-bottom : 2px solid rgba(255,60,70,1);
+					border-bottom : 2px solid #641be1;
 					outline: 0px;
 					font-size: 2em;
 					color : #ddd;
 				}
 				
-				.fa-times{
+				#searchCloseBtn{
 					color :  rgba(255,60,70,1);
 					float : right;
 					margin : 1% 1% 0 0;

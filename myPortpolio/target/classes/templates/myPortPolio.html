@@ -101,7 +101,7 @@
 		   
 		}
 		#profilePicture{
-			background-image: url(./img/whiteBack3.jpg);
+			background-image: url(./img/whiteBack4.jpg);
 		}
 		#profilePicture2{
 			background-image: url(./img/whiteBack4.jpg);
@@ -177,9 +177,7 @@
 		    top: -2%;
 		    font-size: 10vh;
 		    color: red;
-			
 		}
-		
 	</style>
 	</th:block>
 	<th:block layout:fragment="script">
@@ -190,13 +188,10 @@
 					$('#btnCover').animate({
 						width : "12%",
 						left : "88%"
-
 						},"middle",function(){
 							$("#uploadCover").css("display","block")
 						})
-						
 				})
-				
 				$("#btnCover").mouseleave(function(){
 					$("#uploadCover").css("display","none")
 					$('#btnCover').animate({
@@ -204,7 +199,6 @@
 						left : "90%"
 						},"slow")
 				})
-				
 				$(".pictureCover").click(function(){ //팝업창 열릴때
 					$(".popup").css("left","-100%")
 					var image = $(this).children("div").css("background-image");
@@ -216,10 +210,10 @@
 					$(".popup").animate({
 						left :"15%"
 					},"slow",function(){
-						
 					})
 				})
-				$(".popupCover").click(function(e){ 
+				$(".popupCover").click(function(e){
+					et = e.target;
 					if(et.className === "popupCover" || et.id === "popupClose"){
 						console.log("들어옴")
 						$(".popup").animate({
@@ -227,13 +221,9 @@
 						},"slow",function(){
 							$(".popup").css("display","none")
 							$(".popup").parent().css("display","none")
-							
 						})
 					}
-					/* if(et.id === "") */
 				})
-					
-				
 			});	
 		</script>
 	</th:block>

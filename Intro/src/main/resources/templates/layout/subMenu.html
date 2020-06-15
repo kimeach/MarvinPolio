@@ -3,14 +3,114 @@
 xmlns:th="http://www.thymeleaf.org"
 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<div th:fragment="subMenu">
-	aa
 	
+		<div id="subMenuCover">
+			<div id="menuCover">
+				<div id="menu_inst" class="menuSubClass"></div>
+				<div id="menu_travel" class="menuSubClass"></div>
+				<div id="menu_shopping" class="menuSubClass"></div>
+				<div id="menu_blog" class="menuSubClass"></div>
+			</div>
+			
+			
+			<div class="subMenuClass">
+				<div id="publicInstImage" class="subMenuIcon"></div>
+				<div class="subMenuTitle">공공기관</div>
+			</div>
+			<div class="subMenuClass">
+				<div id="travelImage" class="subMenuIcon">
+				</div>
+				<div class="subMenuTitle">여행</div>
+			</div>
+			<div class="subMenuClass">
+				<div id="onlineShoppingImage" class="subMenuIcon">
+				</div>
+				<div class="subMenuTitle">쇼핑몰</div>
+			</div>
+			<div class="subMenuClass">
+				<div id="blogImage" class="subMenuIcon"></div>
+				<div class="subMenuTitle">블로그</div>
+			</div>
+		</div>
 
 
 		<th:block layout:fragment="css">
 			<style>
+				#menuCover{
+					width: 40%;
+				    height: 200px;
+				    position: fixed;
+				    z-index: 1000;
+				    top: 140px;
+				    left: 30%;
+				    display: none;
+				}
+				.menuSubClass{
+				width : 25%;
+				height : 100%;
+				float :left;
+				background-color: rgba(255,255,255,0.6);
+				cursor : pointer;
+				}
+				.menuSubClass:hover {
+					transition : all .2s ease-in;
+					background-color : rgba(255,255,255,0);
+				}
+				.subMenuClass{
+					width : 25%;
+					height : 100%;
+					float : left;
+					text-align: center;
+    				outline: 1px solid #ececec;
+    				
+				}
+				.subMenuIcon{
+					width: 90%;
+				    height: 80%;
+				    background-position: center;
+				    background-size: 100% 100%;
+				    margin: 1% 0 0 5%;
+				}
 				
+				#subMenuCover{
+					width : 40%;
+					height : 100%;
+					margin : 0 0 0 30%;
+				}
+				#publicInstImage{
+					background-image: url( "./img/institutionIcon.jpg");
+				}
+				#travelImage{
+					background-image: url( "./img/travelIcon.jpg");
+				}
+				#onlineShoppingImage{
+					background-image: url( "./img/shopping.jpg");
+				}
+				#blogImage{
+					background-image: url( "./img/blogIcon.png");
+				}
+				.subMenuTitle{
+				    font-size: 1.2em;
+				    font-family: 'Open Sans', sans-serif;
+				    font-weight: 300;
+				    margin-top: 5%;
+				}
 				
+				#menu_inst{
+				
+				}
+				
+				#menu_travel{
+				
+				}
+				
+				#menu_shopping{
+				
+				}
+				
+				#menu_blog{
+				
+				}
 			</style>
 		</th:block>
 		<th:block layout:fragment="script">

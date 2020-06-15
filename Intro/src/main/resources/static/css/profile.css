@@ -79,10 +79,10 @@
 			margin : 2% 0 0 0;
 			display: inline-block;
 		}
-		introEmailCover{
+		#introEmailCover{
 		
 			width : 100%;
-			height : 50%;
+			height : 17%;
 		}
 		#introEmail{
 			font-size: 1em;

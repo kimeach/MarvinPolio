@@ -15,8 +15,8 @@
 						console.log("1")
 						
 						$("#subMenu").slideToggle("middle");
+						$("#menuCover").slideToggle("middle");
 						
-						/*location.href ="myPortPolio";*/
 					})
 					
 					$("#MainMenu_Comment").click(function(){
@@ -27,7 +27,7 @@
 						location.href ="history";
 					})
 					
-					$('.fa-times').click(function(){
+					$('#searchCloseBtn').click(function(){
 						$('#search').slideUp("slow");
 					})
 					
@@ -62,3 +62,21 @@
 					}
 				})
 			});	
+			
+			$(function(){
+				$("#menu_inst").click(function(){
+					location.href ="myPortPolio";
+				})
+				
+				$("#menu_travel").click(function(){
+					location.href ="myPortPolio";
+				})
+				
+				$("#menu_shopping").click(function(){
+					location.href ="myPortPolio";
+				})
+				
+				$("#menu_blog").click(function(){
+					location.href ="myPortPolio";
+				})
+			});
