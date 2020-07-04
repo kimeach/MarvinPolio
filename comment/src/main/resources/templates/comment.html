@@ -21,11 +21,12 @@
 			<div id="comment_chat_title_cover">
 				<div id="comment_chat_title">
 					Test Metro
+					<span class="badge badge-primary badge-pill" id="alarm_count">14</span>
 				</div>
 				<div id="comment_popup_close">
 					<i class="fa fa-times popupBtn" id="cancle_popup" aria-hidden="true"> </i> <!-- X 버튼 -->
-				<i class="fa fa-window-maximize popupBtn" id="max_popup" aria-hidden="true"></i> <!-- 최대화 -->
-				<i class="fa fa-window-minimize popupBtn" id="min_popup" aria-hidden="true"></i> <!-- 최소화 -->
+					<i class="fa fa-window-maximize popupBtn" id="max_popup" aria-hidden="true"></i> <!-- 최대화 -->
+					<i class="fa fa-window-minimize popupBtn" id="min_popup" aria-hidden="true"></i> <!-- 최소화 -->
 				</div>
 			</div>
 			<div id="comment_chat_cover">
@@ -34,14 +35,14 @@
 					<input type="text" id="comment_chat_input">
 					<button id="comment_chat_btn">전송</button>
 				</div>
-
 			</div>
 		</div>
-				<div id="contentCover">
-		
+		<div id="contentCover">
 			<div class="pictureCover">
 				<div id="commentPicture" class="commentPicture"></div>
-				<div id="profile_name">polio 1</div>
+				<div id="profile_name">polio 1  
+					
+				</div>
 			</div>
 			<div class="pictureCover">
 				<div id="commentPicture2" class="commentPicture"></div>
@@ -72,8 +73,10 @@
 				<div id="profile_name">polio 8</div>
 			</div>
 		</div>
-		<div id="footer_popup_min_cover">
-			<div id="footer_popup_min">
+		<div id="sidebar_popup_min_cover">
+			<div id="sidebar_popup_min">
+				
+			
 			</div>
 		</div>
 	</div>
@@ -92,9 +95,9 @@
     background-color: white;
     margin: 7% 0 0 10%;
     border-radius: 0 0 5% 5%;
-    z-index: 999;
+    z-index: 1000;
     position: absolute;
-    box-shadow: 2px 2px 20px grey;
+    box-shadow: 5px 5px 5px grey;
     display: none;
     top: 0px;
     left: -100%;
@@ -106,7 +109,7 @@
 	font-family: 'Raleway', sans-serif;
 	padding: 2% 0 0 5%;
 	width : 75%;
-	height : 100%;
+	height : 98%;
 	float : left;
 }
 
@@ -135,7 +138,6 @@
 	height: 15%;
 	margin: 1% 0 0 5%;
 }
-
 #comment_chat_input {
 	border: none;
 	width: 90%;
@@ -160,7 +162,17 @@
 	cursor : pointer;
 	float : right;
 }
-
+#sidebar_popup_min_cover{
+	width: 8%;
+    height: 80%;
+    position: absolute;
+    z-index: 999;
+    top: 15%;
+    left: -10%;
+    background-color: white;
+    BOX-SHADOW: 10px 6px 10px grey;
+    border-radius: 5px;
+}
 
 		.pictureCover{
 			width : 20%;
@@ -211,7 +223,9 @@
 		#commentPicture8{
 			background-image: url(./img/back5.jpg);
 		}
-		
+		#alarm_count{
+			display : none;
+		}
 		
 </style>
 		<link th:href="@{/css/profile.css?version=11}" rel="stylesheet"
@@ -223,6 +237,35 @@
 			$(function() {
 				 $( "#comment_popup_cover" ).draggable();  /* 팝업 자유자재로 드래그 할수 있도록 */
 				 
+				 $("#comment_popup_cover").click(function(){
+					 if(parseInt($("#comment_popup_cover").css("width")) >= 250){ //max 상태
+						 console.log("전 width :  "+$("#comment_popup_cover").css("width"));
+					
+					 }else{ //min 상태
+						console.log("후 width :  "+$("#comment_popup_cover").css("width"));
+						
+						$("#comment_popup_cover").css("display","block")
+						$("#comment_chat_title").css("font-size","6vh")	
+						$(".popupBtn").css("font-size","2vh")	
+						$("#comment_popup_cover").animate({
+							width : "80%",
+							height: "81%",
+							left : "0%",
+						},"slow",function(){
+							
+						})
+						$("#comment_chat_content_cover").css("display","block");
+						$("#comment_chat").css("display","block");
+						$("#comment_chat_cover").css("display","block");
+						$("#comment_chat_title_cover").css("height","15%");
+						$("#comment_popup_close").css("display","display");
+						$("#comment_chat_title").css("padding-top","2%");
+						$("#comment_chat_title").css("width","75%");
+						$("#alarm_count").css("display","none");
+						$("#comment_popup_close").css("display","block");
+						
+					 }
+				 })
 				 
 				$(".commentPicture").click(function(){ //commentPicture 클릭 후
 					$("#comment_popup_cover").css("display","block")
@@ -233,14 +276,41 @@
 				})
 				
 				$("#min_popup").click(function(){ //최소화
+					/* $('#sidebar_popup_min_cover').animate({
+						left : "0%"
+					},"slow") */
+					
+					$("#comment_popup_cover").css("display","block")
+					$("#comment_chat_title").css("font-size","2.5vh")	
+					$(".popupBtn").css("font-size","1vh")	
+					$("#comment_popup_cover").animate({
+						width : "9%",
+						height: "7%",
+						left : "-10%",
+					},"slow",function(){
+						
+					})
+					$("#comment_chat_content_cover").css("display","none");
+					$("#comment_chat_cover").css("display","none");	
+					$("#comment_chat").css("display","none");
+					$("#comment_chat_title_cover").css("height","100%");
+					$("#comment_popup_close").css("display","none");
+					$("#comment_chat_title").css("padding-top","10%");
 					
 					
-				})
-				
-				
-				
+					console.log("width :  "+$("#comment_popup_cover").css("width"));
+					
+					if(parseInt($("#comment_popup_cover").css("width")) >= 400){
+					    console.log("들어옴")
+					    $("#comment_chat_title").css("width","100%");
+						$("#alarm_count").css("display","inline-block");
+					}else{
+						console.log("나온 후 width :  "+$("#comment_popup_cover").css("width"));
+					}
+					
+				}) //최소화 종료
 				$("#max_popup").click(function(){
-					if(parseInt($("#comment_popup_cover").css("width")) < 1000){ // 작아졌을 때
+					if(parseInt($("#comment_popup_cover").css("width")) < 1000){ // small -> big
 						$("#comment_popup_cover").css("display","block")
 						$("#comment_chat_title").css("font-size","6vh")	
 						$(".popupBtn").css("font-size","2vh")	
@@ -251,9 +321,10 @@
 							left : "0%",
 							top : "0%"
 						},"slow",function(){
+						
 						})
 						
-					}else{ // 커졌을 때 
+					}else{ // big -> small
 						$("#comment_popup_cover").css("display","block")
 						$("#comment_chat_title").css("font-size","1vh")	
 						$(".popupBtn").css("font-size","1vh")	
@@ -263,10 +334,9 @@
 							height: "20%",
 							left : "-10%",
 						},"slow",function(){
+							
 						})
 					}
-					
-					
 				})
 				
 				$("#cancle_popup").click(function(){
@@ -282,8 +352,11 @@
 						},"slow",function(){
 						})
 				})
+				
+				
+				
 			});
-			
+
 			
 		</script>
 	</th:block>
