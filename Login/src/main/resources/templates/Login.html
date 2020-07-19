@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:include="layout/headerSetting::head">
+</head>
+
+<body class="container-fluid">
+	<div th:include="layout/searchPopup::search" id="search"
+		class="commonBgColor"></div>
+	<!-- body layout -->
+	<div th:include="layout/topMenu::topMenu" id="topMenu"
+		class="commonBgColor"></div>
+	<!-- sidebar layout -->
+	<div th:include="layout/subMenu::subMenu" id="subMenu"
+		class="commonBgColor"></div>
+	<!-- sidebar layout -->
+	<div class="BaseCover">
+
+		<div id="LoginCover">
+			<div id="loginTitle" class="commonColor">L O G I N</div>
+			<div id="loginBody">
+				<input type="text" class="Login_Input" id="input_id"
+					placeholder="ID를 입력해주세요..."> <input type="password"
+					class="Login_Input" id="input_pw" placeholder="PW를 입력해주세요...">
+				<button class="Login_Input" id="LoginBtn">로그인</button>
+				<button class="Login_btn" id="FindBtn">ID/PW 찾기</button>
+				<button class="Login_btn" id="SignUpBtn">회원가입</button>
+
+			</div>
+		</div>
+
+	</div>
+
+	<th:block layout:fragment="css">
+		<style>
+#LoginCover {
+	margin: 15% 0 0 35%;
+	width: 30%;
+	height: 50%;
+	background-color: white;
+	box-shadow: 10px 10px 10px grey;
+}
+
+#loginTitle {
+	width: 100%;
+	height: 20%;
+	font-family: 'Raleway', sans-serif;
+	font-size: 3vh;
+	text-align: center;
+	padding: 5% 0 0 0;
+	font-weight: 500;
+	margin-bottom: 5%;
+}
+
+#loginBody {
+	width: 100%;
+	height: 90%;
+}
+
+.Login_Input {
+	width: 90%;
+	height: 15%;
+	margin: 1% 5%;
+	border-radius: 10px;
+	outline: none;
+	border-color: #641be1;
+}
+
+.Login_btn {
+	width: 42.5%;
+	height: 15%;
+	border-radius: 10px;
+	outline: none;
+	border-color: #641be1;
+	background-color: #641be1;
+	float: left;
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#LoginBtn {
+	background-color: #641be1;
+	color: white;
+	font-size: 2vh;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#FindBtn {
+	margin: 1% 5% 0 5%;
+}
+
+#SignUpBtn {
+	margin: 1% 5% 0 0;
+}
+</style>
+
+
+
+	</th:block>
+
+	<th:block layout:fragment="script">
+		<th:block th:include="layout/headerSetting::script"></th:block>
+		<script type="text/javascript" th:inline="javascript">
+			$(function() {
+				
+				/* 로그인 버튼 */
+				$("#LoginBtn").click(function(){
+					var map = {};
+					//아이디 비밀번호 값을 ajax 형식으로 보낸다. 
+					var id = $("#input_id").val();
+					var pw = $("#input_pw").val();
+					map = {
+						"id" : id,
+						"pw" : pw			
+					}
+					$.ajax({
+						url : "./Login",
+						data : JSON.stringify(map),
+						type : "post",
+						contentType : "application/json",
+						success : function(data){
+							if(data === "true"){
+								alert("로그인 성공")
+								location.href = "./index?check=true";
+							}
+							else if(data === "false"){
+								alert("아이디 및 비밀번호를 다시 확인해 주세요.")
+								
+							}
+						},
+						error : function(){
+							alert("실패")
+						}
+					})					
+					//db에 일치하는 값이 있는지 확인
+					
+					//일치하면 로그인 성공
+					
+					//일치하지 않으면 로그인 실패
+				})
+				
+				/* 아이디/비밀번호 찾기 버튼 */
+				$("#FindBtn").click(function(){
+					alert("아이디 비밀번호 찾기 버튼 클릭됨")
+				})
+				
+				
+				/* 회원가입 버튼  */
+				$("#SignUpBtn").click(function(){
+					alert("회원가입 찾기 버튼 클릭됨")
+				})
+				
+				
+				
+				
+			});
+		</script>
+	</th:block>
+</body>
+</html>

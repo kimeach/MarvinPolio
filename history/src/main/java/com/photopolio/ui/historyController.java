@@ -27,6 +27,7 @@ import org.springframework.web.servlet.ModelAndView;
  *  </PRE> 
  */
 @Controller
+
 @RequestMapping("/history")
 public class historyController {
 

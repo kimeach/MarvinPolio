@@ -1,5 +1,10 @@
 package com.photoPolio.ui.Controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,11 +29,24 @@ import org.springframework.web.servlet.ModelAndView;
  *  </PRE> 
  */
 @Controller
+
+
 @RequestMapping("/index")
 public class indexController {
 
 	@GetMapping
-	public ModelAndView getIndex() {
-		return new ModelAndView("index");
+	public ModelAndView getIndex(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav = new ModelAndView("index");
+		String check = null;
+		if(request.getParameter("check") != null) {
+			check = request.getParameter("check");
+			mav.addObject("check", check);
+			HttpSession session = request.getSession();
+			session.setAttribute("test", check);
+			
+		}else {
+			
+		}
+		return mav;
 	}
 }

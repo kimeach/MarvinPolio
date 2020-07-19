@@ -7,6 +7,7 @@
   </parent>
   <artifactId>comment</artifactId>
        <packaging>jar</packaging>
+       	
        	<dependencies>
       	<dependency>
             <groupId>com.photoPolio.ui</groupId>

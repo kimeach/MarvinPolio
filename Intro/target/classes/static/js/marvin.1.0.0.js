@@ -36,6 +36,10 @@
 						
 					})
 					
+					$("#menu_login").click(function(){
+						location.href = "Login"
+					})
+					
 				});	
 				
 			$(function(){

@@ -30,6 +30,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/profile")
 public class profileController {
 	
+	
 	@GetMapping
 	public ModelAndView getProfile() {
 		ModelAndView mav = new ModelAndView();

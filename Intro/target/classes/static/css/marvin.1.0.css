@@ -159,6 +159,15 @@ width: 7%;
 			color: white;
 		}
 		
+		
+		.BaseCover{
+			width: 100%;
+		    height: 100%;
+		    background-color: #ececec;
+		    display: inline-block;
+		    background-position: center;
+		    background-size: 100% 100%;
+		}
 @media (min-width: 1600px) and (max-width: 1720px) {
 
 		#topMenu{

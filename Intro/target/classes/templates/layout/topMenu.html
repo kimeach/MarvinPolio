@@ -32,7 +32,17 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 			검색
 		</div>
 	</div>
-
+	<div id="LoginMenu">
+			<i class="fa fa-bell fa-lg" id="menu_bell"></i>
+			
+			<th:block th:if="${session.test}=='true'">
+				<i class="fa fa-user fa-lg" id="menu_user"></i>
+			</th:block>
+			
+			<th:block th:if="${session.test} !='true'">
+				<i class="fa fa-sign-in fa-lg" id="menu_login"></i>
+			</th:block>
+	</div>
 
 		<th:block layout:fragment="css">
 			<style>
@@ -75,6 +85,19 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 				.MainMenuClass:hover{
 					transition : all .2s ease-in;
 					color : #641be1;
+				}
+				
+				#LoginMenu{
+					width : 5%;
+					float : right;	
+					margin : 1% 1% 0 0;
+				}
+				
+				#menu_bell{
+					margin : 0 20% 0 0;
+				}
+				#menu_bell,#menu_login,#menu_user{
+				cursor: pointer;
 				}
 			</style>
 		</th:block>
