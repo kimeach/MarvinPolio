@@ -39,6 +39,21 @@
 					$("#menu_login").click(function(){
 						location.href = "Login"
 					})
+				
+					$("#menu_logout").click(function(){
+						$.ajax({
+							url : "./Logout",
+							type : "get",
+							data : "",
+							success : function(){
+								alert("로그아웃되었습니다.");
+								location.reload(true);
+							},
+							error : function(){
+							}
+						})
+					})
+					
 					
 				});	
 				

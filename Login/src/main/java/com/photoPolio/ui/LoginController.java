@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +56,6 @@ import reactor.core.publisher.Mono;
  */
 
 @Controller
-
 @RequestMapping("/Login")
 public class LoginController {
 	
@@ -68,17 +68,36 @@ public class LoginController {
 //	MetroRestTemplate rest;
 	
 	@GetMapping
-	public ModelAndView getLogin(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView getLogin() {
 		ModelAndView mav = new ModelAndView("Login");
 		return mav;
 	}
-		
+	
+	
+	/**
+	 * @param map 
+	 * @return Login 하는 Controller
+	 */
 	@ResponseBody
-	@PostMapping
-	public ResponseEntity<String> postLogin(@RequestBody Map<String,Object> map){
+	@PostMapping("/checkLogin")
+	public ResponseEntity<String> getLogin(@RequestBody Map<String,Object> map, HttpServletRequest request){
+		System.out.println("get 들어옴");
 		WebClient webC = WebClient.create("http://localhost:1002/polio");
 		Mono<String> b = webC.get().uri("/user/{id}/{pw}",map.get("id"),map.get("pw")).accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(String.class);
+		
+		//Mono<String> c = webC.get().uri("//{id}/{pw}",map.get("id"),map.get("pw")).accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(String.class);
+		
+		if(b.block().equals("true")) {
+			System.out.println("true 들어옴");
+			HttpSession session = request.getSession();
+			session.setAttribute("Login", b.block());
+			WebClient webOauth = WebClient.create("http://localhost:1000/polio");
+			Mono<String> c = webOauth.get().uri("/oauth/{id}/{pw}",map.get("id"),map.get("pw")).accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(String.class);
+			System.out.println("c : "+c.block());
+		}else {
+			System.out.println("false");
+			
+		}
 		return new ResponseEntity<String>(b.block(),HttpStatus.OK);
 	}
-	
 }

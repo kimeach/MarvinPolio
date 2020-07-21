@@ -63,6 +63,7 @@
 	width: 90%;
 	height: 15%;
 	margin: 1% 5%;
+	font-size : 1em;
 	border-radius: 10px;
 	outline: none;
 	border-color: #641be1;
@@ -112,11 +113,11 @@
 					var id = $("#input_id").val();
 					var pw = $("#input_pw").val();
 					map = {
-						"id" : id,
-						"pw" : pw			
+						"id":id,
+						"pw":pw			
 					}
 					$.ajax({
-						url : "./Login",
+						url : "./Login/checkLogin",
 						data : JSON.stringify(map),
 						type : "post",
 						contentType : "application/json",

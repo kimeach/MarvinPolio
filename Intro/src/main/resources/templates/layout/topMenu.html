@@ -33,14 +33,16 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 		</div>
 	</div>
 	<div id="LoginMenu">
-			<i class="fa fa-bell fa-lg" id="menu_bell"></i>
+			<i class="fa fa-bell fa-lg icon-class" id="menu_bell"></i>
 			
-			<th:block th:if="${session.test}=='true'">
-				<i class="fa fa-user fa-lg" id="menu_user"></i>
+			<th:block th:if="${session.Login}=='true'">
+				<i class="fa fa-user fa-lg icon-class" id="menu_user"></i>
+				<i class="fa fa-sign-out fa-lg icon-class" id="menu_logout"></i>
+				 
 			</th:block>
 			
-			<th:block th:if="${session.test} !='true'">
-				<i class="fa fa-sign-in fa-lg" id="menu_login"></i>
+			<th:block th:if="${session.Login} !='true'">
+				<i class="fa fa-sign-in fa-lg icon-class" id="menu_login"></i>
 			</th:block>
 	</div>
 
@@ -82,20 +84,24 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 					cursor: pointer;
 				}
 				
+				.icon-class{
+					font-size : 2vh;
+				}
 				.MainMenuClass:hover{
 					transition : all .2s ease-in;
 					color : #641be1;
 				}
 				
 				#LoginMenu{
-					width : 5%;
+					width : 6%;
 					float : right;	
 					margin : 1% 1% 0 0;
 				}
 				
-				#menu_bell{
-					margin : 0 20% 0 0;
+				#menu_bell,#menu_user{
+					margin : 0 15% 0 0;
 				}
+				
 				#menu_bell,#menu_login,#menu_user{
 				cursor: pointer;
 				}
@@ -104,7 +110,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 		<th:block layout:fragment="script">
 			<th:block th:fragment="script">
 				<script>
-
+				
 				</script>
 			</th:block>
 		</th:block>

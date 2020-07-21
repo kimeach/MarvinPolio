@@ -35,18 +35,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class indexController {
 
 	@GetMapping
-	public ModelAndView getIndex(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView getIndex() {
 		ModelAndView mav = new ModelAndView("index");
-		String check = null;
-		if(request.getParameter("check") != null) {
-			check = request.getParameter("check");
-			mav.addObject("check", check);
-			HttpSession session = request.getSession();
-			session.setAttribute("test", check);
-			
-		}else {
-			
-		}
 		return mav;
 	}
 }
