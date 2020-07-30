@@ -11,11 +11,15 @@
 						location.href ="profile";
 					})
 					
-					$("#MainMenu_MyPortPolio").click(function(){
-						console.log("1")
+					$("#MainMenu_PhotoPolio").click(function(){
 						
 						$("#subMenu").slideToggle("middle");
 						$("#menuCover").slideToggle("middle");
+						
+					})
+					
+					$("#MainMenu_MyPhotoPolio").click(function(){
+						location.href ="photoPolio";
 						
 					})
 					

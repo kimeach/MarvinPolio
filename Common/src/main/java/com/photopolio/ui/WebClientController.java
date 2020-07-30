@@ -38,21 +38,21 @@ public class WebClientController {
 	
 //		 List<Map<String, Object>>  test = webC.get().uri("/user").accept(MediaType.APPLICATION_JSON).retrieve().bodyToFlux(Map.class).toStream().collect(Collectors.toList());
 	
-	public WebClient webC = WebClient.create("http://localhost:1002/polio");
+	public WebClient getUrl = WebClient.create("http://localhost:1002/polio");
 	
 	public List<Map<String,Object>> getListMapClient(String uri) {
-		return webC.get().uri(uri).accept(MediaType.APPLICATION_JSON).retrieve().bodyToFlux(Map.class).toStream().collect(Collectors.toList());
+		return getUrl.get().uri(uri).accept(MediaType.APPLICATION_JSON).retrieve().bodyToFlux(Map.class).toStream().collect(Collectors.toList());
 	}
 	
 	public List<Map<String,Object>> getListMapClient(String uri,Object data) {
-		return webC.get().uri(uri,data).accept(MediaType.APPLICATION_JSON).retrieve().bodyToFlux(Map.class).toStream().collect(Collectors.toList());
+		return getUrl.get().uri(uri,data).accept(MediaType.APPLICATION_JSON).retrieve().bodyToFlux(Map.class).toStream().collect(Collectors.toList());
 	}
 	public List<Map<String,Object>> getListMapClient(String uri,Object data,Object data2) {
-		return webC.get().uri(uri,data,data2).accept(MediaType.APPLICATION_JSON).retrieve().bodyToFlux(Map.class).toStream().collect(Collectors.toList());
+		return getUrl.get().uri(uri,data,data2).accept(MediaType.APPLICATION_JSON).retrieve().bodyToFlux(Map.class).toStream().collect(Collectors.toList());
 	}
 	
 	public List<Object> getListObjectClient(String uri) {
-		return webC.get().uri(uri).accept(MediaType.APPLICATION_JSON).retrieve().bodyToFlux(Object.class).toStream().collect(Collectors.toList());
+		return getUrl.get().uri(uri).accept(MediaType.APPLICATION_JSON).retrieve().bodyToFlux(Object.class).toStream().collect(Collectors.toList());
 	}
 	public Map<String,Object> getMapClient(String uri) {
 		return null;

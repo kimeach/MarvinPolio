@@ -18,7 +18,7 @@
 	<!-- sidebar layout -->
 	<div id="profileCover">
 		<div id="comment_popup_cover">
-			<div id="comment_chat_title_cover">
+			<div id="comment_chat_title_cover" class="backColor_2">
 				<div id="comment_chat_title">
 					Test Metro
 					<span class="badge badge-primary badge-pill" id="alarm_count">14</span>
@@ -30,10 +30,56 @@
 				</div>
 			</div>
 			<div id="comment_chat_cover">
-				<div id="comment_chat_content_cover"></div>
+				<div id="comment_chat_content_cover">
+				<div id="comment_main_chat_cover">
+					<div class="comment_your_chat">
+						<p>테스트입니다. 안녕하세요. 김기문입니다. </p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+					</div>
+					<div class="comment_my_chat">
+						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+					</div>
+					<div class="comment_my_chat">
+						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+					</div>
+					<div class="comment_my_chat">
+						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+					</div>
+					<div class="comment_your_chat">
+						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+					</div>
+					<div class="comment_your_chat">
+						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+					</div>
+					<div class="comment_my_chat">
+						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+					</div>
+					<div class="comment_your_chat">
+						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
+					</div>
+					
+				</div>
+					
+				
+				</div>
 				<div id="comment_chat">
-					<input type="text" id="comment_chat_input">
-					<button id="comment_chat_btn">전송</button>
+					<input type="text" id="comment_chat_input" class="backColor_2">
+					 <button id="comment_chat_btn" class="btnColor_2">전송</button>
 				</div>
 			</div>
 		</div>
@@ -121,7 +167,7 @@
 #comment_chat_title_cover{
 	width: 100%;
 	height : 15%;
-	background-color: #641be1;
+/*  	background-color: #641be1;  */
 }
 #comment_chat_cover {
 	width: 100%;
@@ -130,20 +176,20 @@
 
 #comment_chat_content_cover {
 	width: 100%;
-	height: 85%;
+	height: 90%;
+	overflow: auto;
 }
 
 #comment_chat {
-	width: 90%;
-	height: 15%;
-	margin: 1% 0 0 5%;
+	width: 100%;
+	height: 10%;
 }
 #comment_chat_input {
 	border: none;
 	width: 90%;
-	height: 70%;
+	height: 100%;
 	outline: none;
-	background-color: #23284e;
+/* 	background-color: #23284e; */
 	float: left;
 	color: white;
 	font-size: 1.3em;
@@ -152,9 +198,10 @@
 }
 
 #comment_chat_btn {
-	background-color: #641be1;
+/* 	background-color: #641be1; */
+	
 	width: 10%;
-	height: 70%;
+	height: 100%;
 	border: none;
 	color: white;
 	font-size: 2vh;
@@ -226,7 +273,70 @@
 		#alarm_count{
 			display : none;
 		}
+		#comment_main_chat_cover{
+			width : 100%;
+			height : 100%;
+			float : left;
+		}
+		.comment_your_chat{
+			min-width: 10%;
+    		max-width: 40%;
+			height : auto;
+			box-shadow: 1px 2px 5px black;
+			margin: 2% 40% 2% 2%;
+			border-radius: 25px;
+			padding : 1%;
+			display: inline-block;
+		}
+		.comment_my_chat{
+			min-width: 10%;
+		    max-width: 40%;
+		    height: auto;
+		    box-shadow: 1px 2px 5px black;
+		    margin: 2% 2% 2% 30%;
+		    float: right;
+		    border-radius: 25px;
+		    padding: 1%;
+		    color: red;
+		    display: inline-block;
+		}
 		
+::-webkit-scrollbar {
+  width: 10px;  /* 세로축 스크롤바 길이 */
+  height: 20px;  /* 가로축 스크롤바 길이 */
+}
+::-webkit-scrollbar-track {
+  background-color: #2e2c31;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: gray;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #2e2c31;
+}
+::-webkit-scrollbar-button {
+  background-color: darkblue;
+  width: 20px;
+  height: 10px;
+}
+::-webkit-scrollbar-button:start {
+  background-color: #2e2c31; /* Top, Left 방향의 이동버튼 */
+}
+::-webkit-scrollbar-button:end {
+  background-color: #2e2c31; /* Bottom, Right 방향의 이동버튼 */
+}
+::-webkit-scrollbar-button:vertical:increment {
+}
+::-webkit-scrollbar-button:vertical:decrement {
+}
+::-webkit-scrollbar-corner {
+  background-color: violet; /* 우측 하단의 코너 부분 */
+}
+::-webkit-resizer {
+  background-color: green;
+}
+
 </style>
 		<link th:href="@{/css/profile.css?version=11}" rel="stylesheet"
 			type="text/css">
@@ -234,6 +344,8 @@
 	<th:block layout:fragment="script">
 		<th:block th:include="layout/headerSetting::script"></th:block>
 		<script type="text/javascript" th:inline="javascript">
+			
+		var ev;
 			$(function() {
 				 $( "#comment_popup_cover" ).draggable();  /* 팝업 자유자재로 드래그 할수 있도록 */
 				 
@@ -352,8 +464,42 @@
 						},"slow",function(){
 						})
 				})
+				$("#comment_chat_btn").click(function(){
+					// id,chat_No,comment,insert_date,update_date,
+					var map = {};
+					var id ="admin";
+					var chatNo = "2";
+					var comment =$("#comment_chat_input").val();
+					
+					map ={
+						"id" : id,
+						"chatNo" : chatNo,
+						"comment" : comment,
+					}
+					
+					
+					$.ajax({
+						url : "./comment",
+						data : JSON.stringify(map),
+						type : "POST",
+						contentType : "application/json",
+						success : function(){
+							alert('성공')
+						},
+						error : function(){
+							alert("실패")
+						}
+						
+					})
+				})
 				
-				
+					$("#comment_chat_input").keyup(function(e){
+					console.log("code : "+e.keyCode);
+					if(e.keyCode === 13){ //enter
+						$("#comment_chat_btn").click();
+					} 
+					
+				})
 				
 			});
 

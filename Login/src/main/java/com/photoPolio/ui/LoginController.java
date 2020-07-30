@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -81,23 +82,13 @@ public class LoginController {
 	@ResponseBody
 	@PostMapping("/checkLogin")
 	public ResponseEntity<String> getLogin(@RequestBody Map<String,Object> map, HttpServletRequest request){
-		System.out.println("get 들어옴");
-		WebClient webC = WebClient.create("http://localhost:1002/polio");
-		Mono<String> b = webC.get().uri("/user/{id}/{pw}",map.get("id"),map.get("pw")).accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(String.class);
+		HttpSession session = request.getSession();
+
+		Mono<String> b = client.getUrl.get().uri("/Login/{id}/{pw}",map.get("id"),map.get("pw")).accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(String.class);
+		session.setAttribute("Login", b.block());
+		System.out.println("test : "+b.block());
 		
-		//Mono<String> c = webC.get().uri("//{id}/{pw}",map.get("id"),map.get("pw")).accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(String.class);
 		
-		if(b.block().equals("true")) {
-			System.out.println("true 들어옴");
-			HttpSession session = request.getSession();
-			session.setAttribute("Login", b.block());
-			WebClient webOauth = WebClient.create("http://localhost:1000/polio");
-			Mono<String> c = webOauth.get().uri("/oauth/{id}/{pw}",map.get("id"),map.get("pw")).accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(String.class);
-			System.out.println("c : "+c.block());
-		}else {
-			System.out.println("false");
-			
-		}
 		return new ResponseEntity<String>(b.block(),HttpStatus.OK);
 	}
 }

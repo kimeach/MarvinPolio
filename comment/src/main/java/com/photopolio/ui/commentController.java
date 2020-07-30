@@ -15,7 +15,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -47,6 +51,8 @@ public class commentController {
 	@Autowired
 	WebClient.Builder Builder;
 	
+	@Autowired
+	WebClientController client;
 	@GetMapping
 	public ModelAndView getComment() {
 		ModelAndView mav = new ModelAndView();
@@ -54,46 +60,15 @@ public class commentController {
 		return mav;
 	}
 	
-	
-	@GetMapping("/test")
-	public ResponseEntity<?> test(){
-		WebClient web = Builder.build();
-		StopWatch stopWatch = new StopWatch();
-		
-		stopWatch.start();
-		Mono<Object> helloMono = web.get().uri("http://localhost:1002/polio/userA").retrieve().bodyToMono(Object.class);
-		
-		Flux<Object> helloFlux = web.get().uri("http://localhost:1002/polio/userA").retrieve().bodyToFlux(Object.class);
-				
+	@PostMapping
+	@ResponseBody
+	public ResponseEntity<?> postComment(@RequestBody Map<String, Object> map){
+		System.out.println("들어옴");
+		System.out.println("map : "+map);
+		//Mono<String> b = client.getUrl.get().uri("/Login/{id}/{pw}",map.get("id"),map.get("pw")).accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(String.class);
 		
 		
-		List<Map<String, Object>> list = web.mutate().baseUrl("http://localhost:1002/polio/userA").build().get().accept(MediaType.APPLICATION_JSON).retrieve()
-								.bodyToFlux(Map.class).toStream().collect(Collectors.toList());
-		
-		int count =0;
-		for(Map<String,Object> arr : list) {
-			
-			System.out.println("============"+(++count)+"==============");
-			System.out.println("id : "+arr.get("id"));
-			System.out.println("pw : "+arr.get("password"));
-			System.out.println("name : "+arr.get("name"));
-			
-		}
-		
-		helloFlux.subscribe(s -> {
-			System.out.println(s +" 까지");
-			
-			if(stopWatch.isRunning()) {
-				stopWatch.stop();
-			}
-			System.out.println(stopWatch.prettyPrint());
-			stopWatch.start();
-		});
-		
-		
-		return new ResponseEntity<>("",HttpStatus.OK);
+		return new ResponseEntity<>("OK",HttpStatus.OK);
 	}
-	
-	
 	
 }

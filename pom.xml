@@ -107,5 +107,6 @@
 		<module>history</module>
 		<module>test</module>
 		<module>Login</module>
+		<module>PhotoPolio_All</module>
 	</modules>
 </project>

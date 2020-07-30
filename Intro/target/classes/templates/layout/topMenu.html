@@ -15,17 +15,20 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <!-- 			Profile -->
 			프로필
 		</div>
-		<div class="MainMenuClass" id="MainMenu_MyPortPolio">
+		<div class="MainMenuClass" id="MainMenu_PhotoPolio">
 <!-- 			My PortPolio -->
 			포트폴리오
 		</div>
+
+		<div class="MainMenuClass" id="MainMenu_MyPhotoPolio">
+<!-- 			My PortPolio -->
+			내 포트폴리오 관리
+		</div>
+		
+				
 		<div class="MainMenuClass" id="MainMenu_Comment">
 <!-- 			Comment -->
 			답변
-		</div>
-		<div class="MainMenuClass" id="MainMenu_History">
-<!-- 			History -->
-			연혁
 		</div>
 		<div class="MainMenuClass" id="searchBtn-search">
 <!-- 			Search -->
@@ -35,13 +38,13 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<div id="LoginMenu">
 			<i class="fa fa-bell fa-lg icon-class" id="menu_bell"></i>
 			
-			<th:block th:if="${session.Login}=='true'">
+			<th:block th:if="${session.Login} ne null">
 				<i class="fa fa-user fa-lg icon-class" id="menu_user"></i>
 				<i class="fa fa-sign-out fa-lg icon-class" id="menu_logout"></i>
 				 
 			</th:block>
 			
-			<th:block th:if="${session.Login} !='true'">
+			<th:block th:if="${session.Login} eq null">
 				<i class="fa fa-sign-in fa-lg icon-class" id="menu_login"></i>
 			</th:block>
 	</div>
@@ -57,15 +60,14 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 				    font-family: 'Raleway', sans-serif;
 				    display: table;
 				    float: left;
-				    margin: 0 0 0 10%;
+				    margin: 0 0 0 5%;
 				}
 				#TitleMenu{
 					display: table-cell;
 					vertical-align: middle;
-					padding: 0 0 0 15%;
 				}
 				#MainMenuCover{
-					width: 30%;
+					width: 45%;
 				    height: 100%;
 				    float: left;
 				    font-size: 2vh;

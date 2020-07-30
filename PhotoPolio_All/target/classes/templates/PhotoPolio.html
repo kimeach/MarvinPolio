@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:include="layout/headerSetting::head">
+</head>
+
+<body class="container-fluid">
+	<div th:include="layout/searchPopup::search" id="search" class="commonBgColor"></div> <!-- body layout -->
+	<div th:include="layout/topMenu::topMenu" id="topMenu" class="commonBgColor"></div> <!-- sidebar layout -->
+	<div th:include="layout/subMenu::subMenu" id="subMenu" class="commonBgColor"></div> <!-- sidebar layout -->
+	<div id="profileCover">
+		<div class="popupCover">
+			<div class="popup">
+				<i class="fa fa-times fa-lg" id="popupClose" style="color:rgba(60, 110, 120, 1);margin: 1% 0 0 57%;"></i>
+				<div id="popupPicture">
+			 	</div>
+			 	<div id="popupTitle">
+			 	Hello World
+			 	</div>
+			 	<div id="popupContent">
+			 	<!-- 	<div id="flag">
+			 			<i class="fa fa-bookmark" aria-hidden="true"></i>
+			 		</div> -->
+			 		<p>Hello Everyone.</p>
+			 		<p>My name is Kim Ki Moon.</p>
+			 		<p>This Project is Shopping Mall</p>
+			 		<p>If you are interested in this project</p>
+			 		<p>Please Contect my Email</p>
+			 		 
+			 	</div>
+			</div>
+		</div>
+
+		<div id="contentCover">
+		
+			<div class="pictureCover">
+				<div id="profilePicture" class="profilePicture"></div>
+				<div id="profile_name">polio 1</div>
+			</div>
+			<div class="pictureCover">
+				<div id="profilePicture2" class="profilePicture"></div>
+				<div id="profile_name">polio 2</div>
+			</div>
+			<div class="pictureCover">
+				<div id="profilePicture3" class="profilePicture"></div>
+				<div id="profile_name">polio 3</div>
+			</div>
+			<div class="pictureCover">
+				<div id="profilePicture4" class="profilePicture"></div>
+				<div id="profile_name">polio 4</div>
+			</div>
+			<div class="pictureCover">
+				<div id="profilePicture5" class="profilePicture"></div>
+				<div id="profile_name">polio 5</div>
+			</div>
+			<div class="pictureCover">
+				<div id="profilePicture6" class="profilePicture"></div>
+				<div id="profile_name">polio 6</div>
+			</div>
+			<div class="pictureCover">
+				<div id="profilePicture7" class="profilePicture"></div>
+				<div id="profile_name">polio 7</div>
+			</div>
+			<div class="pictureCover">
+				<div id="profilePicture8" class="profilePicture"></div>
+				<div id="profile_name">polio 8</div>
+			</div>
+		</div>
+	</div>
+	<th:block layout:fragment="css">
+		<style type="text/css">
+		#profileMainCover{
+			width : 100%;
+			height : 40%;
+			box-shadow: 5px 5px 20px grey;
+		}
+		.pictureCover{
+			width : 20%;
+			height : 40%;
+			float: left;
+			box-shadow: 5px 5px 20px grey;
+			margin: 2% 2% 2% 3%;
+			position: relative;
+		}
+		
+		.pictureCover:hover .profilePicture{
+			transition : all .5s ease-in;
+			transform : rotateY(180deg);
+		}
+		
+		.profilePicture{
+			width: 80%;
+		    height: 80%;
+		    border-radius: 50%;
+		    background-position: center;
+		    background-size: 100% 100%;
+		    margin: 5% 0 0 10%;
+		    float: left;
+		   
+		}
+		#profilePicture{
+			background-image: url(./img/whiteBack4.jpg);
+		}
+		#profilePicture2{
+			background-image: url(./img/whiteBack4.jpg);
+		}
+		#profilePicture3{
+			background-image: url(./img/whiteBack5.jpg);
+		}
+		#profilePicture4{
+			background-image: url(./img/whiteBack2.jpg);
+		}
+		#profilePicture5{
+			background-image: url(./img/back.jpg);
+		}
+		#profilePicture6{
+			background-image: url(./img/back2.jpg);
+		}
+		#profilePicture7{
+			background-image: url(./img/back3.jpg);
+		}
+		#profilePicture8{
+			background-image: url(./img/back5.jpg);
+		}
+		
+		#profileIntroCover{
+			width: 80%;
+			height : 100%;
+			float : left;
+			background-color: rgba(60, 110, 120, 1);
+		}
+		#profileIntro{
+			color : white;
+			font-size: 1.2em;
+			font-family: 'Montserrat', sans-serif;
+		}
+		#profile_name{
+		    font-size: 1.8em;
+		    float: left;
+		    margin: 2% 35%;
+		    font-weight: bold;
+		    font-family: 'Fira Sans', sans-serif;
+		}
+		
+		#popupPicture{
+		    width: 40%;
+		    height: 100%;
+		    background-image: url(./img/whiteBack3.jpg);
+		    background-position: center;
+		    background-size: 100% 100%;
+		    float: left;
+		}
+
+		#popupTitle{
+			float: left;
+			font-size: 3em;
+    		font-family: 'Barlow', sans-serif;
+    		width : 60%;
+    		height : 20%;
+    		text-align: center;
+    		margin: 2% 0 0 0;
+		}
+		
+		#popupContent{
+			float: left;
+		    width: 59%;
+		    height: 72%;
+		    font-size: 1.5em;
+		    font-family: 'Barlow', sans-serif;
+		    margin: 0 0 0 1%;
+		}
+		#flag{
+			position: absolute;
+		    left: 3%;
+		    top: -2%;
+		    font-size: 10vh;
+		    color: red;
+		}
+	</style>
+	</th:block>
+	<th:block layout:fragment="script">
+	 <th:block th:include="layout/headerSetting::script"></th:block>
+		<script type="text/javascript" th:inline="javascript">
+			$(function(){
+				$("#btnCover").mouseenter(function(){
+					$('#btnCover').animate({
+						width : "12%",
+						left : "88%"
+						},"middle",function(){
+							$("#uploadCover").css("display","block")
+						})
+				})
+				$("#btnCover").mouseleave(function(){
+					$("#uploadCover").css("display","none")
+					$('#btnCover').animate({
+						width : "10%",
+						left : "90%"
+						},"slow")
+				})
+				$(".pictureCover").click(function(){ //팝업창 열릴때
+					$(".popup").css("left","-100%")
+					var image = $(this).children("div").css("background-image");
+					var title = $(this).children("#profile_name").text();
+					$("#popupPicture").css("background-image",image)
+					$("#popupTitle").text(title)
+					$(".popup").parent().css("display","block")
+					$(".popup").css("display","block")
+					$(".popup").animate({
+						left :"15%"
+					},"slow",function(){
+					})
+				})
+				$(".popupCover").click(function(e){
+					et = e.target;
+					if(et.className === "popupCover" || et.id === "popupClose"){
+						console.log("들어옴")
+						$(".popup").animate({
+							left :"-100%"
+						},"slow",function(){
+							$(".popup").css("display","none")
+							$(".popup").parent().css("display","none")
+						})
+					}
+				})
+			});	
+		</script>
+	</th:block>
+	</body>
+</html>

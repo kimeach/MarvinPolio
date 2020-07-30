@@ -114,10 +114,10 @@ width: 7%;
 	
 	.popupCover{
 		width: 100%;
-    	height: 86.7%;
+    	height: 87%;
 	    position: absolute;
 	    z-index: 299;
-	    top: 120px;
+	    top: 13vh;
 	    left: 0%;
 	    background-color: rgba(0,0,0,0.5);
 	    display: none;
@@ -167,6 +167,18 @@ width: 7%;
 		    display: inline-block;
 		    background-position: center;
 		    background-size: 100% 100%;
+		}
+		.backColor_1{
+		background-color : #23284e;
+		}
+		.backColor_2{
+		background-color : #2e2c31;
+		}
+		.btnColor_1{
+		background-color: #641be1;
+		}
+		.btnColor_2{
+		background-color: #0d0b11;
 		}
 @media (min-width: 1600px) and (max-width: 1720px) {
 

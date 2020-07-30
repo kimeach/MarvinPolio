@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:include="layout/headerSetting::head">
+</head>
+
+<body class="container-fluid">
+	<div th:include="layout/searchPopup::search" id="search" class="commonBgColor"></div> <!-- body layout -->
+	<div th:include="layout/topMenu::topMenu" id="topMenu" class="commonBgColor"></div> <!-- sidebar layout -->
+	<div th:include="layout/subMenu::subMenu" id="subMenu" class="commonBgColor"></div> <!-- sidebar layout -->
+	<div class="BaseCover">
+		<div id="signUp_cover">
+			a
+		</div>
+	</div>
+	
+	<th:block layout:fragment="css">
+		<link th:href="@{/css/profile.css?version=10}"  rel="stylesheet" type="text/css">
+		<style>
+		#signUp_cover{
+			width : 80%;
+			height : 80%;
+			background-color : white;
+		}
+		
+		</style>
+		
+	</th:block>
+	
+	<th:block layout:fragment="script">
+	 <th:block th:include="layout/headerSetting::script"></th:block>
+		<script type="text/javascript" th:inline="javascript">
+			
+		$(function(){
+			
+			});	
+		</script>
+	</th:block>
+	</body>
+</html>

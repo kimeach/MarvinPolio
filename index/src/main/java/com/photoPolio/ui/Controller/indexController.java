@@ -35,8 +35,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class indexController {
 
 	@GetMapping
-	public ModelAndView getIndex() {
+	public ModelAndView getIndex(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("index");
+		HttpSession session = request.getSession();
+		
+		System.out.println("session : "+session.getAttribute("session"));
 		return mav;
 	}
 }

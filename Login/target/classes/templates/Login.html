@@ -112,23 +112,30 @@
 					//아이디 비밀번호 값을 ajax 형식으로 보낸다. 
 					var id = $("#input_id").val();
 					var pw = $("#input_pw").val();
+					if($("#input_id").val() === ""){
+						id = " ";
+					}
+					if($("#input_pw").val() === ""){
+						pw = " ";
+					}
+					
 					map = {
 						"id":id,
 						"pw":pw			
 					}
+					
 					$.ajax({
 						url : "./Login/checkLogin",
 						data : JSON.stringify(map),
 						type : "post",
 						contentType : "application/json",
 						success : function(data){
-							if(data === "true"){
-								alert("로그인 성공")
-								location.href = "./index?check=true";
-							}
-							else if(data === "false"){
+							if(data === "false"){
 								alert("아이디 및 비밀번호를 다시 확인해 주세요.")
-								
+							}
+							else{
+								alert("로그인 성공")
+								location.href = "./index";
 							}
 						},
 						error : function(){
@@ -150,7 +157,9 @@
 				
 				/* 회원가입 버튼  */
 				$("#SignUpBtn").click(function(){
-					alert("회원가입 찾기 버튼 클릭됨")
+					location.href="signUp";
+					
+					
 				})
 				
 				
