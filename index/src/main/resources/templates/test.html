@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:include="layout/headerSetting::head">
+</head>
+
+<body class="container-fluid">
+	<div th:include="layout/searchPopup::search" id="search" class="commonBgColor"></div> <!-- body layout -->
+	<div th:include="layout/topMenu::topMenu" id="topMenu" class="commonBgColor"></div> <!-- sidebar layout -->
+	<div th:include="layout/subMenu::subMenu" id="subMenu" class="commonBgColor"></div> <!-- sidebar layout -->
+	
+	<div th:include="slide::Slide" id="slide"></div>
+	<div th:include="main::Main" id="Main">
+
+	</div> <!-- body layout -->
+	<div id="slideShow-Cover" class="remoteColor">
+		<!-- <div id="slideShow_left" class="slideShow_item"> 
+			<i class="fas fa-chevron-left fa-lg"></i> 
+		</div> -->
+		<!-- <div id="slideShow_right" class="slideShow_item"> 
+			<i class="fas fa-chevron-right fa-lg"></i> 
+		</div> -->
+	</div>
+	<th:block layout:fragment="css">
+		<style type="text/css">
+		
+		
+		
+			#slideShow-Cover{
+				width : 100%;
+				height : 13%;
+				position: absolute;
+				bottom: 8%;
+				text-align: center;
+			}
+			.slideShow_item{
+				width : 2%;
+				display: inline-block;
+				margin : 2% 0 0 0;
+				cursor: pointer;
+			}
+	</style>
+	</th:block>
+	<th:block layout:fragment="script">
+	 <th:block th:include="layout/headerSetting::script"></th:block>
+		<script type="text/javascript" th:inline="javascript">
+			$(function(){
+			});	
+		</script>
+	</th:block>
+	</body>
+</html>

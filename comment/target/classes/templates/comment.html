@@ -20,8 +20,8 @@
 		<div id="comment_popup_cover">
 			<div id="comment_chat_title_cover" class="backColor_2">
 				<div id="comment_chat_title">
-					Test Metro
-					<span class="badge badge-primary badge-pill" id="alarm_count">14</span>
+					<div id="chat_title">Test Metro</div>
+					<span class="badge badge-pill" id="alarm_count">14</span>
 				</div>
 				<div id="comment_popup_close">
 					<i class="fa fa-times popupBtn" id="cancle_popup" aria-hidden="true"> </i> <!-- X 버튼 -->
@@ -31,47 +31,58 @@
 			</div>
 			<div id="comment_chat_cover">
 				<div id="comment_chat_content_cover">
-				<div id="comment_main_chat_cover">
-					<div class="comment_your_chat">
-						<p>테스트입니다. 안녕하세요. 김기문입니다. </p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-					</div>
-					<div class="comment_my_chat">
-						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-					</div>
-					<div class="comment_my_chat">
-						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-					</div>
-					<div class="comment_my_chat">
-						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-					</div>
-					<div class="comment_your_chat">
-						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-					</div>
-					<div class="comment_your_chat">
-						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-					</div>
-					<div class="comment_my_chat">
-						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-					</div>
-					<div class="comment_your_chat">
-						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-						<p>테스트입니다. 안녕하세요. 김기문입니다.</p>
-					</div>
+				<div id="comment_main_chat_cover" >
+					
+						<th:block th:each="li : ${list}" >
+							<th:block th:if="${li.id} eq 'admin'">
+								<div class="comment_my_chat">
+									<div th:text="${li.comm}"></div>
+								</div>
+							</th:block>
+							
+							<th:block th:if="${li.id} ne 'admin'">
+									<div class="comment_your_chat">
+								<div th:text="${li.comm}"></div>
+								</div>
+							</th:block>
+						</th:block>
+					
+					
+<!-- 					<div class="comment_my_chat"> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 					</div> -->
+<!-- 					<div class="comment_my_chat"> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 					</div> -->
+<!-- 					<div class="comment_my_chat"> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 					</div> -->
+<!-- 					<div class="comment_your_chat"> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 					</div> -->
+<!-- 					<div class="comment_your_chat"> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 					</div> -->
+<!-- 					<div class="comment_my_chat"> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 					</div> -->
+<!-- 					<div class="comment_your_chat"> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다. 테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 						<p>테스트입니다. 안녕하세요. 김기문입니다.</p> -->
+<!-- 					</div> -->
 					
 				</div>
 					
@@ -83,40 +94,38 @@
 				</div>
 			</div>
 		</div>
-		<div id="contentCover">
-			<div class="pictureCover">
-				<div id="commentPicture" class="commentPicture"></div>
-				<div id="profile_name">polio 1  
-					
-				</div>
+		<div id="contentCover" >
+			<div class="pictureCover" >
+				<div id="commentPicture" class="commentPicture" data-chatNo="1"></div>
+				<div class="profile_name">Social Network</div>
 			</div>
-			<div class="pictureCover">
-				<div id="commentPicture2" class="commentPicture"></div>
-				<div id="profile_name">polio 2</div>
+			<div class="pictureCover" >
+				<div id="commentPicture2" class="commentPicture" data-chatNo="2"></div>
+				<div class="profile_name">polio 2</div>
 			</div>
-			<div class="pictureCover">
-				<div id="commentPicture3" class="commentPicture"></div>
-				<div id="profile_name">polio 3</div>
+			<div class="pictureCover" >
+				<div id="commentPicture3" class="commentPicture" data-chatNo="3"></div>
+				<div class="profile_name">polio 3</div>
 			</div>
-			<div class="pictureCover">
-				<div id="commentPicture4" class="commentPicture"></div>
-				<div id="profile_name">polio 4</div>
+			<div class="pictureCover" >
+				<div id="commentPicture4" class="commentPicture" data-chatNo="4"></div>
+				<div class="profile_name">polio 4</div>
 			</div>
-			<div class="pictureCover">
-				<div id="commentPicture5" class="commentPicture"></div>
-				<div id="profile_name">polio 5</div>
+			<div class="pictureCover" >
+				<div id="commentPicture5" class="commentPicture" data-chatNo="5"></div>
+				<div class="profile_name">polio 5</div>
 			</div>
-			<div class="pictureCover">
-				<div id="commentPicture6" class="commentPicture"></div>
-				<div id="profile_name">polio 6</div>
+			<div class="pictureCover" >
+				<div id="commentPicture6" class="commentPicture" data-chatNo="6"></div>
+				<div class="profile_name">polio 6</div>
 			</div>
-			<div class="pictureCover">
-				<div id="commentPicture7" class="commentPicture"></div>
-				<div id="profile_name">polio 7</div>
+			<div class="pictureCover" >
+				<div id="commentPicture7" class="commentPicture" data-chatNo="7"></div>
+				<div class="profile_name">polio 7</div>
 			</div>
-			<div class="pictureCover">
-				<div id="commentPicture8" class="commentPicture"></div>
-				<div id="profile_name">polio 8</div>
+			<div class="pictureCover" >
+				<div id="commentPicture8" class="commentPicture" data-chatNo="8"></div>
+				<div class="profile_name">polio 8</div>
 			</div>
 		</div>
 		<div id="sidebar_popup_min_cover">
@@ -140,7 +149,6 @@
     height: 81%;
     background-color: white;
     margin: 7% 0 0 10%;
-    border-radius: 0 0 5% 5%;
     z-index: 1000;
     position: absolute;
     box-shadow: 5px 5px 5px grey;
@@ -209,18 +217,23 @@
 	cursor : pointer;
 	float : right;
 }
-#sidebar_popup_min_cover{
-	width: 8%;
-    height: 80%;
-    position: absolute;
-    z-index: 999;
-    top: 15%;
-    left: -10%;
-    background-color: white;
-    BOX-SHADOW: 10px 6px 10px grey;
-    border-radius: 5px;
-}
-
+		#sidebar_popup_min_cover{
+			width: 8%;
+		    height: 80%;
+		    position: absolute;
+		    z-index: 999;
+		    top: 15%;
+		    left: -10%;
+		    background-color: white;
+		    BOX-SHADOW: 10px 6px 10px grey;
+		    border-radius: 5px;
+		}
+		.profile_name{
+			text-align: center;
+	    	width: 100%;
+	    	height: 10%;
+		    clear: both;
+		}
 		.pictureCover{
 			width : 20%;
 			height : 40%;
@@ -293,13 +306,24 @@
 		    max-width: 40%;
 		    height: auto;
 		    box-shadow: 1px 2px 5px black;
-		    margin: 2% 2% 2% 30%;
+		    margin: 2% 2% 2% 60%;
 		    float: right;
 		    border-radius: 25px;
 		    padding: 1%;
-		    color: red;
+		    color: #ddd;
 		    display: inline-block;
+		    background-color: #404040;
 		}
+		#chat_title{
+			float : left;
+		}
+		
+		#alarm_count{
+			margin: 0 0 0 2%;
+			color: #fff;
+   			background-color: #8f1c1c;
+		}
+		
 		
 ::-webkit-scrollbar {
   width: 10px;  /* 세로축 스크롤바 길이 */
@@ -346,15 +370,23 @@
 		<script type="text/javascript" th:inline="javascript">
 			
 		var ev;
+		var ts;
+		var ls = [[${list}]];
 			$(function() {
-				 $( "#comment_popup_cover" ).draggable();  /* 팝업 자유자재로 드래그 할수 있도록 */
+				var chatNo;
+				
+				
+				 $( "#comment_popup_cover" ).draggable({
+					 scroll: false,
+					
+				 });  /* 팝업 자유자재로 드래그 할수 있도록 */
 				 
 				 $("#comment_popup_cover").click(function(){
 					 if(parseInt($("#comment_popup_cover").css("width")) >= 250){ //max 상태
-						 console.log("전 width :  "+$("#comment_popup_cover").css("width"));
+						//console.log("전 width :  "+$("#comment_popup_cover").css("width"));
 					
 					 }else{ //min 상태
-						console.log("후 width :  "+$("#comment_popup_cover").css("width"));
+						//console.log("후 width :  "+$("#comment_popup_cover").css("width"));
 						
 						$("#comment_popup_cover").css("display","block")
 						$("#comment_chat_title").css("font-size","6vh")	
@@ -384,7 +416,10 @@
 					$("#comment_popup_cover").animate({
 						left : "0%"
 					},"slow")
-					
+					$("#comment_chat_input").focus();
+					$("#comment_chat_content_cover").scrollTop($("#comment_chat_content_cover")[0].scrollHeight);
+					chatNo = $(this).attr("data-chatNo");
+					console.log(" chatNo : "+chatNo)
 				})
 				
 				$("#min_popup").click(function(){ //최소화
@@ -452,49 +487,125 @@
 				})
 				
 				$("#cancle_popup").click(function(){
-					$("#comment_popup_cover").css("display","none")
 						$("#comment_chat_title").css("font-size","6vh")	
 						$(".popupBtn").css("font-size","2vh")	
 						$("#comment_chat_btn").css("font-size","2vh")
 						$("#comment_popup_cover").animate({
-							width : "80%",
-							height: "81%",
-							left : "0%",
+							//width : "80%",
+							//height: "81%",
+							left : "-100%",
 							top : "0%"
 						},"slow",function(){
-						})
+							
+							$("#comment_popup_cover").css("display","none")
+					})
+					
 				})
+				if($("#comment_chat_input").val() === ""){
+					$("#comment_chat_btn").css("cursor","not-allowed");
+				}else{
+					$("#comment_chat_btn").css("cursor","pointer");
+				}
 				$("#comment_chat_btn").click(function(){
 					// id,chat_No,comment,insert_date,update_date,
+					var session = [[${session}]];
 					var map = {};
-					var id ="admin";
+					var id = null;
 					var chatNo = "2";
 					var comment =$("#comment_chat_input").val();
-					
-					map ={
-						"id" : id,
-						"chatNo" : chatNo,
-						"comment" : comment,
+					if(typeof(session.Login) ==="undefined"){ // 없을 때
+						id = "guest";
+					}
+					else{
+						id = "admin";
+					}
+					if($("#comment_chat_input").val() === ""){
+					}
+					else{
+						map ={
+								"id" : id,
+								"chatNo" : chatNo,
+								"comment" : comment,
+								"user" : "admin"
+							}
+							$.ajax({
+								url : "./comment",
+								data : JSON.stringify(map),
+								type : "POST",
+								contentType : "application/json",
+								success : function(data){
+									var maps = {
+										"id" : id,
+										"chatNo" : chatNo	
+									}
+									$.ajax({
+										url : "./comment/getComment?id="+id+"&chatNo="+chatNo,
+										type : "get",
+										success : function(data){
+											ts =data;
+											//for(var arr in data){
+											
+												
+												
+												var id =data[data.length-1]["id"];
+												var chatNo = data[data.length-1]["chatNo"];
+												var comm = data[data.length-1]["comm"];
+												
+												
+												if(typeof(session.Login) ==="undefined"){ // 없을 때
+													$("#comment_main_chat_cover").append('<div class="comment_your_chat">'
+														+'<div>'+comm+'</div>'
+														+'</div>')
+												}
+												else{ //있을 때
+													$("#comment_main_chat_cover").append('<div class="comment_my_chat">'
+														+'<div>'+comm+'</div>'
+														+'</div>')
+												}
+												
+												if(id === "admin"){ // 관리자
+													
+												}
+												else{ //사용자
+												}
+											//}
+											$("#comment_chat_content_cover").scrollTop($("#comment_chat_content_cover")[0].scrollHeight);
+											$("#comment_chat_input").val("");
+											$("#comment_chat_btn").css("cursor","not-allowed");
+										},
+										error : function(){
+											alert("실패 2")
+										}
+									})
+								},
+								error : function(){
+									alert("실패 1")
+								}
+							})
 					}
 					
-					
-					$.ajax({
-						url : "./comment",
-						data : JSON.stringify(map),
-						type : "POST",
-						contentType : "application/json",
-						success : function(){
-							alert('성공')
-						},
-						error : function(){
-							alert("실패")
-						}
-						
-					})
 				})
 				
+				$("#comment_popup_cover").mouseover(function(e){
+					target = e.target;
+					if(target.id ==="comment_chat_title"){
+						$("#comment_popup_cover").draggable({ disabled: false });
+					}
+					else if(target.id === "comment_popup_close"){
+						
+						$("#comment_popup_cover").draggable({ disabled: false });
+					}else{
+						$("#comment_popup_cover").draggable({ disabled: true });
+					}
+				})
+				
+				
 					$("#comment_chat_input").keyup(function(e){
-					console.log("code : "+e.keyCode);
+						if($("#comment_chat_input").val() === ""){
+							$("#comment_chat_btn").css("cursor","not-allowed");
+						}else{
+							$("#comment_chat_btn").css("cursor","pointer");
+						}
 					if(e.keyCode === 13){ //enter
 						$("#comment_chat_btn").click();
 					} 

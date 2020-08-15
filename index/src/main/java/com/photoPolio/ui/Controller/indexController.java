@@ -36,7 +36,8 @@ public class indexController {
 
 	@GetMapping
 	public ModelAndView getIndex(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("index");
+		//ModelAndView mav = new ModelAndView("index");
+		ModelAndView mav = new ModelAndView("test");
 		HttpSession session = request.getSession();
 		
 		System.out.println("session : "+session.getAttribute("session"));
